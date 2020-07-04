@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var message: String = ""
+    @State private var isComplete = false
     private let potentialAnswers = [Answer(title: "Alright"), Answer(title: "Great"), Answer(title: "Amazing")]
     
     
@@ -25,35 +26,52 @@ struct ContentView: View {
                         .foregroundColor(.appTintColor)
                         .padding(.top, 60)
                     
-                    QuestionView(question: Question(title: "This Employee was", answers: potentialAnswers))
-                    
-                    QuestionView(question: Question(title: "The service provided was", answers: potentialAnswers))
-                    
-                    HStack {
-                        Text("Why do you feel this way?")
+                    Group {
+                        Text("Thank you for your feedback!")
                             .font(.title3)
-                        
-                        Spacer()
-                    }
-                    .padding(.top, 40)
-                    .padding(.bottom, 8)
-                    
-                    TextEditor(text: $message)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(8)
-                        .frame(height: 200)
-                    
-                    Button(action: {}, label: {
-                        Text("Submit")
-                            .font(.headline)
                             .bold()
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 92)
-                            .padding(.vertical, 16)
-                            .background(Color.appTintColor)
-                            .clipShape(Capsule())
-                    })
-                    .padding(.vertical, 32)
+                            .foregroundColor(.appTintColor)
+                            .padding(.top, isComplete ? 80 : 0)
+                    }
+                    .opacity(isComplete ? 1 : 0)
+                    .scaleEffect(isComplete ? 1 : 0)
+                    
+                    Group {
+                        QuestionView(question: Question(title: "This Employee was", answers: potentialAnswers))
+                        
+                        QuestionView(question: Question(title: "The service provided was", answers: potentialAnswers))
+                        
+                        HStack {
+                            Text("Why do you feel this way?")
+                                .font(.title3)
+                            
+                            Spacer()
+                        }
+                        .padding(.top, 40)
+                        .padding(.bottom, 8)
+                        
+                        TextEditor(text: $message)
+                            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(8)
+                            .frame(height: 200)
+                        
+                        Button(action: {
+                            withAnimation(.spring()) {
+                                isComplete = true
+                            }
+                        }, label: {
+                            Text("Submit")
+                                .font(.headline)
+                                .bold()
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 92)
+                                .padding(.vertical, 16)
+                                .background(Color.appTintColor)
+                                .clipShape(Capsule())
+                        })
+                        .padding(.vertical, 32)
+                    }.opacity(isComplete ? 0.0 : 1)
+                
                     
                     Spacer()
                 }
