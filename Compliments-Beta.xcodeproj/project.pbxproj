@@ -33,6 +33,9 @@
 		EEDFDAF524B01B57001D9F91 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF324B01B0F001D9F91 /* KeyboardAdaptive.swift */; };
 		EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */; };
 		EEDFDAF924B02162001D9F91 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */; };
+		EEDFDAFB24B0E270001D9F91 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */; };
+		EEDFDAFC24B0E2BC001D9F91 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */; };
+		EEDFDAFE24B0E2DE001D9F91 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFD24B0E2DE001D9F91 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,8 @@
 		EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		EEDFDAF324B01B0F001D9F91 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
 		EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		EEDFDAFD24B0E2DE001D9F91 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,9 +204,11 @@
 				EEDFDAE224AFC8BA001D9F91 /* Compliments-Beta.entitlements */,
 				EEDFDA8324AFC6B7001D9F91 /* MainApp.swift */,
 				EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */,
+				EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */,
 				EEDFDAEA24B01950001D9F91 /* QuestionView.swift */,
 				EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */,
 				EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */,
+				EEDFDAFD24B0E2DE001D9F91 /* Question.swift */,
 				EEDFDAF324B01B0F001D9F91 /* KeyboardAdaptive.swift */,
 				EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */,
 				EEDFDA8724AFC6B8001D9F91 /* Assets.xcassets */,
@@ -503,6 +510,8 @@
 				EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEDFDA8624AFC6B7001D9F91 /* ContentView.swift in Sources */,
 				EEDFDAE824AFDEFF001D9F91 /* Color+Extension.swift in Sources */,
+				EEDFDAFB24B0E270001D9F91 /* SuccessView.swift in Sources */,
+				EEDFDAFE24B0E2DE001D9F91 /* Question.swift in Sources */,
 				EEDFDAF424B01B0F001D9F91 /* KeyboardAdaptive.swift in Sources */,
 				EEDFDAEF24B0198C001D9F91 /* CircleButtonStyle.swift in Sources */,
 				EEDFDAED24B01968001D9F91 /* CircleButtonView.swift in Sources */,
@@ -533,6 +542,7 @@
 				EEDFDAF924B02162001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEDFDAF024B019EB001D9F91 /* QuestionView.swift in Sources */,
 				EEDFDAF124B019EF001D9F91 /* CircleButtonStyle.swift in Sources */,
+				EEDFDAFC24B0E2BC001D9F91 /* SuccessView.swift in Sources */,
 				EEDFDAF524B01B57001D9F91 /* KeyboardAdaptive.swift in Sources */,
 				EEDFDAB524AFC704001D9F91 /* ComplimentsAppClipApp.swift in Sources */,
 				EEDFDAE924AFDF54001D9F91 /* Color+Extension.swift in Sources */,

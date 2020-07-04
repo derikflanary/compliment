@@ -26,15 +26,7 @@ struct ContentView: View {
                         .foregroundColor(.appTintColor)
                         .padding(.top, 60)
                     
-                    Group {
-                        Text("Thank you for your feedback!")
-                            .font(.title3)
-                            .bold()
-                            .foregroundColor(.appTintColor)
-                            .padding(.top, isComplete ? 80 : 0)
-                    }
-                    .opacity(isComplete ? 1 : 0)
-                    .scaleEffect(isComplete ? 1 : 0)
+                    SuccessView(isComplete: $isComplete)
                     
                     Group {
                         QuestionView(question: Question(title: "This Employee was", answers: potentialAnswers))
@@ -89,15 +81,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-
-struct Question {
-    var title: String
-    var answers: [Answer]
-}
-
-struct Answer: Identifiable, Equatable {
-    let id: String = UUID().uuidString
-    var title: String
 }
