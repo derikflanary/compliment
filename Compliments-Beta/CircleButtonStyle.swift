@@ -21,8 +21,7 @@ struct CircleButtonStyle: ButtonStyle {
                         .foregroundColor(.appTintColor)
                         .frame(width: 30, height: 30)
                         .scaleEffect(isSelected ? 1.0 : 0.0)
-                        .animation(Animation.spring(dampingFraction: 0.5).speed(2.0))
-                        .transition(.scale))
+                        .animation(Animation.spring(dampingFraction: 0.5).speed(2.0)))
     }
     
 }

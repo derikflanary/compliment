@@ -11,7 +11,6 @@
 		EEDFDA8624AFC6B7001D9F91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */; };
 		EEDFDA8824AFC6B8001D9F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8724AFC6B8001D9F91 /* Assets.xcassets */; };
 		EEDFDA8B24AFC6B8001D9F91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8A24AFC6B8001D9F91 /* Preview Assets.xcassets */; };
-		EEDFDA9624AFC6B8001D9F91 /* Compliments_BetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA9524AFC6B8001D9F91 /* Compliments_BetaTests.swift */; };
 		EEDFDAA124AFC6B8001D9F91 /* Compliments_BetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAA024AFC6B8001D9F91 /* Compliments_BetaUITests.swift */; };
 		EEDFDAB524AFC704001D9F91 /* ComplimentsAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAB424AFC704001D9F91 /* ComplimentsAppClipApp.swift */; };
 		EEDFDAB924AFC704001D9F91 /* ClipAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDAB824AFC704001D9F91 /* ClipAssets.xcassets */; };
@@ -32,6 +31,8 @@
 		EEDFDAF224B019F3001D9F91 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */; };
 		EEDFDAF424B01B0F001D9F91 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF324B01B0F001D9F91 /* KeyboardAdaptive.swift */; };
 		EEDFDAF524B01B57001D9F91 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF324B01B0F001D9F91 /* KeyboardAdaptive.swift */; };
+		EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */; };
+		EEDFDAF924B02162001D9F91 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +95,6 @@
 		EEDFDA8A24AFC6B8001D9F91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEDFDA8C24AFC6B8001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEDFDA9124AFC6B8001D9F91 /* Compliments-BetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compliments-BetaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDFDA9524AFC6B8001D9F91 /* Compliments_BetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compliments_BetaTests.swift; sourceTree = "<group>"; };
 		EEDFDA9724AFC6B8001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEDFDA9C24AFC6B8001D9F91 /* Compliments-BetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compliments-BetaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDFDAA024AFC6B8001D9F91 /* Compliments_BetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compliments_BetaUITests.swift; sourceTree = "<group>"; };
@@ -118,6 +118,7 @@
 		EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		EEDFDAF324B01B0F001D9F91 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
+		EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +203,7 @@
 				EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */,
 				EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */,
 				EEDFDAF324B01B0F001D9F91 /* KeyboardAdaptive.swift */,
+				EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */,
 				EEDFDA8724AFC6B8001D9F91 /* Assets.xcassets */,
 				EEDFDAE424AFCD87001D9F91 /* Shared.xcassets */,
 				EEDFDAE724AFDEFF001D9F91 /* Color+Extension.swift */,
@@ -222,7 +224,6 @@
 		EEDFDA9424AFC6B8001D9F91 /* Compliments-BetaTests */ = {
 			isa = PBXGroup;
 			children = (
-				EEDFDA9524AFC6B8001D9F91 /* Compliments_BetaTests.swift */,
 				EEDFDA9724AFC6B8001D9F91 /* Info.plist */,
 			);
 			path = "Compliments-BetaTests";
@@ -499,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEDFDAEB24B01950001D9F91 /* QuestionView.swift in Sources */,
+				EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEDFDA8624AFC6B7001D9F91 /* ContentView.swift in Sources */,
 				EEDFDAE824AFDEFF001D9F91 /* Color+Extension.swift in Sources */,
 				EEDFDAF424B01B0F001D9F91 /* KeyboardAdaptive.swift in Sources */,
@@ -512,7 +514,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEDFDA9624AFC6B8001D9F91 /* Compliments_BetaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEDFDAF224B019F3001D9F91 /* CircleButtonView.swift in Sources */,
+				EEDFDAF924B02162001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEDFDAF024B019EB001D9F91 /* QuestionView.swift in Sources */,
 				EEDFDAF124B019EF001D9F91 /* CircleButtonStyle.swift in Sources */,
 				EEDFDAF524B01B57001D9F91 /* KeyboardAdaptive.swift in Sources */,
