@@ -36,6 +36,7 @@
 		EEDFDAFB24B0E270001D9F91 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */; };
 		EEDFDAFC24B0E2BC001D9F91 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */; };
 		EEDFDAFE24B0E2DE001D9F91 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFD24B0E2DE001D9F91 /* Question.swift */; };
+		EEDFDAFF24B13C13001D9F91 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFD24B0E2DE001D9F91 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -543,6 +544,7 @@
 				EEDFDAF024B019EB001D9F91 /* QuestionView.swift in Sources */,
 				EEDFDAF124B019EF001D9F91 /* CircleButtonStyle.swift in Sources */,
 				EEDFDAFC24B0E2BC001D9F91 /* SuccessView.swift in Sources */,
+				EEDFDAFF24B13C13001D9F91 /* Question.swift in Sources */,
 				EEDFDAF524B01B57001D9F91 /* KeyboardAdaptive.swift in Sources */,
 				EEDFDAB524AFC704001D9F91 /* ComplimentsAppClipApp.swift in Sources */,
 				EEDFDAE924AFDF54001D9F91 /* Color+Extension.swift in Sources */,
@@ -730,6 +732,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -754,6 +757,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -861,6 +865,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -886,6 +891,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";

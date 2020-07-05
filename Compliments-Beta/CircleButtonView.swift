@@ -31,6 +31,8 @@ struct CircleButton: View {
 
 struct CircleButton_Previews: PreviewProvider {
     static var previews: some View {
-        CircleButton(isSelected: true, title: "This Employee was")
+        Group {
+            CircleButton(isSelected: true, title: "This Employee was")
+        }
     }
 }

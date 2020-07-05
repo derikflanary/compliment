@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
     
     @State private var message: String = ""
     @State private var isComplete = false
+    @State private var showDownloadPrompt = false
     private let potentialAnswers = [Answer(title: "Alright"), Answer(title: "Great"), Answer(title: "Amazing")]
     
     
@@ -50,6 +52,8 @@ struct ContentView: View {
                         Button(action: {
                             withAnimation(.spring()) {
                                 isComplete = true
+                                showDownloadPrompt = true
+                                UIWindow.currentWindow?.endEditing(true)
                             }
                         }, label: {
                             Text("Submit")
@@ -73,6 +77,9 @@ struct ContentView: View {
         .keyboardAdaptive()
         .onTapGesture {
             UIWindow.currentWindow?.endEditing(true)
+        }
+        .appStoreOverlay(isPresented: $showDownloadPrompt) {
+            SKOverlay.AppConfiguration(appIdentifier: "1522177910", position: .bottom)
         }
     }
 }
