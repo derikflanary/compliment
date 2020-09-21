@@ -6,21 +6,21 @@
 //
 
 import SwiftUI
-import StoreKit
+//import StoreKit
 
 struct ContentView: View {
     
     @State private var message: String = ""
     @State private var isComplete = false
     @State private var showDownloadPrompt = false
-    private let potentialAnswers = [Answer(title: "Alright"), Answer(title: "Great"), Answer(title: "Amazing")]
+    private let potentialAnswers = [Answer(title: "Bronze", color: .orange), Answer(title: "Silver", color: .gray), Answer(title: "Gold", color: .yellow)]
     
     
     var body: some View {
         ScrollView {
             HStack {
                 VStack {
-                    Text("compliments")
+                    Text("compliment")
                         .font(.custom("Montserrat-Light", size: 36))
                         .padding(8)
                         .border(Color.appTintColor, width: 2)
@@ -31,9 +31,7 @@ struct ContentView: View {
                     SuccessView(isComplete: $isComplete)
                     
                     Group {
-                        QuestionView(question: Question(title: "This Employee was", answers: potentialAnswers))
-                        
-                        QuestionView(question: Question(title: "The service provided was", answers: potentialAnswers))
+                        QuestionView(question: Question(title: "Select an award level for this employee based on the service you received", answers: potentialAnswers))
                         
                         HStack {
                             Text("Why do you feel this way?")
@@ -66,6 +64,8 @@ struct ContentView: View {
                                 .clipShape(Capsule())
                         })
                         .padding(.vertical, 32)
+                        .disabled(message.isEmpty)
+                        .opacity(message.isEmpty ? 0.2 : 1.0)
                     }.opacity(isComplete ? 0.0 : 1)
                 
                     
@@ -78,9 +78,9 @@ struct ContentView: View {
         .onTapGesture {
             UIWindow.currentWindow?.endEditing(true)
         }
-        .appStoreOverlay(isPresented: $showDownloadPrompt) {
-            SKOverlay.AppConfiguration(appIdentifier: "1522177910", position: .bottom)
-        }
+//        .appStoreOverlay(isPresented: $showDownloadPrompt) {
+//            SKOverlay.AppConfiguration(appIdentifier: "1522177910", position: .bottom)
+//        }
     }
 }
 

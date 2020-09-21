@@ -16,8 +16,11 @@ struct QuestionView: View {
     var body: some View {
         VStack {
             HStack {
+                Spacer()
+                
                 Text(question.title)
                     .font(.title3)
+                    .multilineTextAlignment(.center)
                 
                 Spacer()
             }
@@ -27,7 +30,7 @@ struct QuestionView: View {
             HStack {
                 ForEach(question.answers) { answer in
                     VStack {
-                        CircleButton(isSelected: answer == selectedAnswer, title: answer.title) {
+                        StarButton(isSelected: answer == selectedAnswer, title: answer.title, color: answer.color) {
                             withAnimation {
                                 self.selectedAnswer = answer
                             }
@@ -46,6 +49,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(question: Question(title: "The service provided was", answers: [Answer(title: "Alright"), Answer(title: "Great"), Answer(title: "Amazing")]))
+        QuestionView(question: Question(title: "The service provided was", answers: [Answer(title: "Alright", color: .orange), Answer(title: "Great", color: .gray), Answer(title: "Amazing", color: .yellow)]))
     }
 }

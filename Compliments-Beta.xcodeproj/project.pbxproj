@@ -12,7 +12,7 @@
 		EEDFDA8824AFC6B8001D9F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8724AFC6B8001D9F91 /* Assets.xcassets */; };
 		EEDFDA8B24AFC6B8001D9F91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8A24AFC6B8001D9F91 /* Preview Assets.xcassets */; };
 		EEDFDAA124AFC6B8001D9F91 /* Compliments_BetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAA024AFC6B8001D9F91 /* Compliments_BetaUITests.swift */; };
-		EEDFDAB524AFC704001D9F91 /* ComplimentsAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAB424AFC704001D9F91 /* ComplimentsAppClipApp.swift */; };
+		EEDFDAB524AFC704001D9F91 /* ComplimentsClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAB424AFC704001D9F91 /* ComplimentsClipApp.swift */; };
 		EEDFDAB924AFC704001D9F91 /* ClipAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDAB824AFC704001D9F91 /* ClipAssets.xcassets */; };
 		EEDFDABC24AFC704001D9F91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDABB24AFC704001D9F91 /* Preview Assets.xcassets */; };
 		EEDFDAC824AFC704001D9F91 /* ComplimentsAppClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAC724AFC704001D9F91 /* ComplimentsAppClipTests.swift */; };
@@ -104,7 +104,7 @@
 		EEDFDAA024AFC6B8001D9F91 /* Compliments_BetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compliments_BetaUITests.swift; sourceTree = "<group>"; };
 		EEDFDAA224AFC6B8001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEDFDAB224AFC704001D9F91 /* ComplimentsAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplimentsAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDFDAB424AFC704001D9F91 /* ComplimentsAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentsAppClipApp.swift; sourceTree = "<group>"; };
+		EEDFDAB424AFC704001D9F91 /* ComplimentsClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentsClipApp.swift; sourceTree = "<group>"; };
 		EEDFDAB824AFC704001D9F91 /* ClipAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ClipAssets.xcassets; sourceTree = "<group>"; };
 		EEDFDABB24AFC704001D9F91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEDFDABD24AFC704001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		EEDFDAB324AFC704001D9F91 /* ComplimentsAppClip */ = {
 			isa = PBXGroup;
 			children = (
-				EEDFDAB424AFC704001D9F91 /* ComplimentsAppClipApp.swift */,
+				EEDFDAB424AFC704001D9F91 /* ComplimentsClipApp.swift */,
 				EEDFDAB824AFC704001D9F91 /* ClipAssets.xcassets */,
 				EEDFDABD24AFC704001D9F91 /* Info.plist */,
 				EEDFDABE24AFC704001D9F91 /* ComplimentsAppClip.entitlements */,
@@ -546,7 +546,7 @@
 				EEDFDAFC24B0E2BC001D9F91 /* SuccessView.swift in Sources */,
 				EEDFDAFF24B13C13001D9F91 /* Question.swift in Sources */,
 				EEDFDAF524B01B57001D9F91 /* KeyboardAdaptive.swift in Sources */,
-				EEDFDAB524AFC704001D9F91 /* ComplimentsAppClipApp.swift in Sources */,
+				EEDFDAB524AFC704001D9F91 /* ComplimentsClipApp.swift in Sources */,
 				EEDFDAE924AFDF54001D9F91 /* Color+Extension.swift in Sources */,
 				EEDFDAE324AFCCC6001D9F91 /* ContentView.swift in Sources */,
 			);

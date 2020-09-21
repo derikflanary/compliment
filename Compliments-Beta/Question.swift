@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Question {
     var title: String
@@ -15,4 +16,5 @@ struct Question {
 struct Answer: Identifiable, Equatable {
     let id: String = UUID().uuidString
     var title: String
+    var color: Color
 }
