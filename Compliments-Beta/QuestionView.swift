@@ -10,7 +10,7 @@ import SwiftUI
 struct QuestionView: View {
     
     let question: Question
-    @State private var selectedAnswer: Answer?
+    @Binding var selectedAnswer: Answer?
     
     
     var body: some View {
@@ -24,14 +24,13 @@ struct QuestionView: View {
                 
                 Spacer()
             }
-            .padding(.top, 40)
             .padding(.bottom, 8)
     
             HStack {
                 ForEach(question.answers) { answer in
                     VStack {
                         StarButton(isSelected: answer == selectedAnswer, title: answer.title, color: answer.color) {
-                            withAnimation {
+                            withAnimation(Animation.spring(dampingFraction: 0.5).speed(1.5)) {
                                 self.selectedAnswer = answer
                             }
                         }
@@ -49,6 +48,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(question: Question(title: "The service provided was", answers: [Answer(title: "Alright", color: .orange), Answer(title: "Great", color: .gray), Answer(title: "Amazing", color: .yellow)]))
+        QuestionView(question: Question(title: "The service provided was", answers: [Answer(title: "Alright", color: .orange), Answer(title: "Great", color: .gray), Answer(title: "Amazing", color: .yellow)]), selectedAnswer: .constant(nil))
     }
 }

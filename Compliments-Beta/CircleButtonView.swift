@@ -50,16 +50,23 @@ struct StarButton: View {
             Button(action: {
                 tapped()
             }, label: {
-                Image(systemName: isSelected ? "star.fill" : "star")
-                    .font(.largeTitle)
-                    .foregroundColor(color)
-                    .animation(.spring())
-                    .transition(.scale)
+                if isSelected {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(color)
+                        .font(.system(size: 48, weight: .bold, design: .default))
+                        .transition(.scaleInFadeOut())
+                } else {
+                    Image(systemName: "star")
+                        .foregroundColor(color)
+                        .font(.system(size: 48, weight: .bold, design: .default))
+
+                }
             })
+            .buttonStyle(StarButtonStyle(color: color))
             
             Text("\(title)")
                 .font(.subheadline)
-                .foregroundColor(Color(.secondaryLabel))
+                .foregroundColor(color)
         }
     }
 }
@@ -67,7 +74,8 @@ struct StarButton: View {
 struct StarButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            StarButton(isSelected: true, title: "This Employee was", color: .orange)
+            StarButton(isSelected: true, title: "Bronze", color: .orange)
+            StarButton(isSelected: false, title: "Bronze", color: .orange)
         }
     }
 }

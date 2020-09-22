@@ -13,11 +13,12 @@ struct ContentView: View {
     @State private var message: String = ""
     @State private var isComplete = false
     @State private var showDownloadPrompt = false
+    @State private var selectedAnswer: Answer?
     private let potentialAnswers = [Answer(title: "Bronze", color: .orange), Answer(title: "Silver", color: .gray), Answer(title: "Gold", color: .yellow)]
     
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             HStack {
                 VStack {
                     Text("compliment")
@@ -31,10 +32,11 @@ struct ContentView: View {
                     SuccessView(isComplete: $isComplete)
                     
                     Group {
-                        QuestionView(question: Question(title: "Select an award level for this employee based on the service you received", answers: potentialAnswers))
+                        QuestionView(question: Question(title: "Select an award level for this employee based on the service you received", answers: potentialAnswers), selectedAnswer: $selectedAnswer)
+                            .padding(.top, 20)
                         
                         HStack {
-                            Text("Why do you feel this way?")
+                            Text("Tell us why? (optional)")
                                 .font(.title3)
                             
                             Spacer()
@@ -43,7 +45,7 @@ struct ContentView: View {
                         .padding(.bottom, 8)
                         
                         TextEditor(text: $message)
-                            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                            .border(Color(.label), width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
                             .cornerRadius(8)
                             .frame(height: 200)
                         
@@ -57,15 +59,16 @@ struct ContentView: View {
                             Text("Submit")
                                 .font(.headline)
                                 .bold()
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(.label))
                                 .padding(.horizontal, 92)
                                 .padding(.vertical, 16)
-                                .background(Color.appTintColor)
+                                .border(Color(.label), width: 1)
                                 .clipShape(Capsule())
+                                .shadow(radius: 4)
                         })
                         .padding(.vertical, 32)
-                        .disabled(message.isEmpty)
-                        .opacity(message.isEmpty ? 0.2 : 1.0)
+                        .disabled(selectedAnswer == nil)
+                        .opacity(selectedAnswer == nil ? 0.2 : 1.0)
                     }.opacity(isComplete ? 0.0 : 1)
                 
                     

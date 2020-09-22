@@ -36,3 +36,27 @@ struct CircleButtonStyle: ButtonStyle {
     }
     
 }
+
+
+struct StarButtonStyle: ButtonStyle {
+    
+    let color: Color
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.98 : 1)
+            .opacity(configuration.isPressed ? 0.9: 1)
+    }
+    
+}
+
+extension AnyTransition {
+
+    static func scaleInFadeOut() -> AnyTransition {
+        let insertion = AnyTransition.scale
+        let removal = AnyTransition.opacity
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+    
+}
+

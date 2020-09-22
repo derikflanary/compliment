@@ -12,12 +12,17 @@ struct SuccessView: View {
     @Binding var isComplete: Bool
     
     var body: some View {
-        Group {
-            Text("Thank you for your feedback!")
-                .font(.title3)
-                .bold()
+        VStack(spacing: 16) {
+            Spacer()
+            
+            Text("Success!")
                 .foregroundColor(.appTintColor)
-                .padding(.top, isComplete ? 80 : 0)
+                .font(.title)
+                .bold()
+            Text("Your response has been submitted")
+            
+            Image(
+            Spacer()
         }
         .opacity(isComplete ? 1 : 0)
         .scaleEffect(isComplete ? 1 : 0)
