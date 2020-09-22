@@ -1,49 +1,23 @@
 //
-//  CircleButtonView.swift
+//  StarButton.swift
 //  Compliments-Beta
 //
-//  Created by Derik Flanary on 7/3/20.
+//  Created by Derik Flanary on 9/22/20.
 //
 
 import SwiftUI
 
-struct CircleButton: View {
-    
-    var isSelected: Bool
-    let title: String
-    var tapped: (() -> Void) = { }
-    
-    var body: some View {
-        VStack {
-            Button(action: {
-                tapped()
-            }, label: {
-                Circle()
-            })
-            .buttonStyle(CircleButtonStyle(isSelected: isSelected))
-            
-            Text("\(title)")
-                .font(.subheadline)
-                .foregroundColor(Color(.secondaryLabel))
-        }
-    }
-}
-
-struct CircleButton_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            CircleButton(isSelected: true, title: "This Employee was")
-        }
-    }
-}
-
-
 struct StarButton: View {
+    
+    // MARK: - Properties
     
     var isSelected: Bool
     let title: String
     let color: Color
     var tapped: (() -> Void) = { }
+    
+    
+    // MARK: - Bodey
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -70,6 +44,9 @@ struct StarButton: View {
         }
     }
 }
+
+
+// MARK: - Previews
 
 struct StarButton_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct QuestionView: View {
+
+    // MARK: - Binding
     
-    let question: Question
     @Binding var selectedAnswer: Answer?
     
+    
+    // MARK: - Properties
+    
+    let question: Question
+    
+    
+    // MARK: - Body
     
     var body: some View {
         VStack {
@@ -46,8 +54,11 @@ struct QuestionView: View {
     
 }
 
+
+// MARK: - Previews
+
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(question: Question(title: "The service provided was", answers: [Answer(title: "Alright", color: .orange), Answer(title: "Great", color: .gray), Answer(title: "Amazing", color: .yellow)]), selectedAnswer: .constant(nil))
+        QuestionView(selectedAnswer: .constant(nil), question: Question(title: "The service provided was", answers: [Answer(title: "Alright", color: .orange), Answer(title: "Great", color: .gray), Answer(title: "Amazing", color: .yellow)]))
     }
 }

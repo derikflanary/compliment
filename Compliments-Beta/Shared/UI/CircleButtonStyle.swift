@@ -9,11 +9,20 @@ import SwiftUI
 
 struct CircleButtonStyle: ButtonStyle {
     
+    // MARK: - Environment
+    
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    var isSelected: Bool
+    
+
+    // MARK: - Scaled metrics
+    
     @ScaledMetric var height: CGFloat = 40
     @ScaledMetric var innerHeight: CGFloat = 30
 
+    
+    // MARK: - Properties
+    
+    var isSelected: Bool
     private var buttonHeight: CGFloat {
         .regular == horizontalSizeClass ? height * 2 : height
     }
@@ -21,6 +30,8 @@ struct CircleButtonStyle: ButtonStyle {
         .regular == horizontalSizeClass ? innerHeight * 2 : innerHeight
     }
 
+    
+    // MARK: - Body
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
@@ -36,27 +47,3 @@ struct CircleButtonStyle: ButtonStyle {
     }
     
 }
-
-
-struct StarButtonStyle: ButtonStyle {
-    
-    let color: Color
-    
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 0.98 : 1)
-            .opacity(configuration.isPressed ? 0.9: 1)
-    }
-    
-}
-
-extension AnyTransition {
-
-    static func scaleInFadeOut() -> AnyTransition {
-        let insertion = AnyTransition.scale
-        let removal = AnyTransition.opacity
-        return .asymmetric(insertion: insertion, removal: removal)
-    }
-    
-}
-
