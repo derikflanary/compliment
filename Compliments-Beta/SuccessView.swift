@@ -21,7 +21,12 @@ struct SuccessView: View {
                 .bold()
             Text("Your response has been submitted")
             
-            Image(
+            Image("logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 80)
+                .foregroundColor(.appTintColor)
+            
             Spacer()
         }
         .opacity(isComplete ? 1 : 0)

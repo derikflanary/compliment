@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 @main
-struct ComplimentsClipApp: App {
+struct ComplimentsAppClipApp: App {
     
     var body: some Scene {
         WindowGroup {

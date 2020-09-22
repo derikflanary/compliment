@@ -22,18 +22,25 @@ struct ContentView: View {
             HStack {
                 VStack {
                     Text("compliment")
-                        .font(.custom("Montserrat-Light", size: 36))
-                        .padding(8)
-                        .border(Color.appTintColor, width: 2)
-                        .cornerRadius(4)
+                        .font(.system(size: 36, weight: .light, design: .default))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .border(Color.appTintColor, width: 1)
+                        .cornerRadius(8)
                         .foregroundColor(.appTintColor)
-                        .padding(.top, 60)
+                        .padding(.top)
                     
-                    SuccessView(isComplete: $isComplete)
+                    if isComplete {
+                        Spacer()
+                        
+                        SuccessView(isComplete: $isComplete)
+                            .transition(.scale)
+                            .padding(.top, 60)
+                    }
                     
                     Group {
                         QuestionView(question: Question(title: "Select an award level for this employee based on the service you received", answers: potentialAnswers), selectedAnswer: $selectedAnswer)
-                            .padding(.top, 20)
+                            .padding(.top, 60)
                         
                         HStack {
                             Text("Tell us why? (optional)")
@@ -45,7 +52,7 @@ struct ContentView: View {
                         .padding(.bottom, 8)
                         
                         TextEditor(text: $message)
-                            .border(Color(.label), width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                            .border(Color(.label), width: 2)
                             .cornerRadius(8)
                             .frame(height: 200)
                         
@@ -62,7 +69,7 @@ struct ContentView: View {
                                 .foregroundColor(Color(.label))
                                 .padding(.horizontal, 92)
                                 .padding(.vertical, 16)
-                                .border(Color(.label), width: 1)
+                                .border(Color(.label), width: 2)
                                 .clipShape(Capsule())
                                 .shadow(radius: 4)
                         })
@@ -77,7 +84,6 @@ struct ContentView: View {
                 .padding(.horizontal, 40)
             }
         }
-        .keyboardAdaptive()
         .onTapGesture {
             UIWindow.currentWindow?.endEditing(true)
         }
@@ -89,6 +95,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
