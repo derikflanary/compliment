@@ -1,15 +1,14 @@
 //
-//  ComplimentsAppClipApp.swift
-//  ComplimentsAppClip
+//  we_compliment_clipApp.swift
+//  we-compliment-clip
 //
-//  Created by Derik Flanary on 7/3/20.
+//  Created by Derik Flanary on 10/4/20.
 //
 
 import SwiftUI
-import UIKit
 
 @main
-struct ComplimentsAppClipApp: App {
+struct we_compliment_clipApp: App {
     
     var body: some Scene {
         WindowGroup {

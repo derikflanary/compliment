@@ -7,45 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */; };
+		EED5C3E2252A5A580078C132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E1252A5A580078C132 /* Assets.xcassets */; };
+		EED5C3E5252A5A580078C132 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E4252A5A580078C132 /* Preview Assets.xcassets */; };
+		EED5C3EA252A5A580078C132 /* we-compliment-clip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = EED5C3DB252A5A580078C132 /* we-compliment-clip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EED5C3F2252A5A740078C132 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDAE424AFCD87001D9F91 /* Shared.xcassets */; };
+		EED5C3F7252A5A780078C132 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFD24B0E2DE001D9F91 /* Question.swift */; };
+		EED5C3FC252A5A7D0078C132 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAE724AFDEFF001D9F91 /* Color+Extension.swift */; };
+		EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */; };
+		EED5C406252A5A860078C132 /* AnyTransition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2537251A6EAE0068191E /* AnyTransition+Extensions.swift */; };
+		EED5C40B252A5A8C0078C132 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */; };
+		EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB254C251A6ED90068191E /* StarButton.swift */; };
+		EED5C40D252A5A8C0078C132 /* StarButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2521251A6E380068191E /* StarButtonStyle.swift */; };
+		EED5C40E252A5A8C0078C132 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */; };
+		EED5C40F252A5A8C0078C132 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEA24B01950001D9F91 /* QuestionView.swift */; };
+		EED5C410252A5A8C0078C132 /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2529251A6E7A0068191E /* ActionButtonStyle.swift */; };
+		EED5C411252A5A8C0078C132 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */; };
+		EED5C412252A5A8C0078C132 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */; };
 		EEDFDA8424AFC6B7001D9F91 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8324AFC6B7001D9F91 /* MainApp.swift */; };
 		EEDFDA8624AFC6B7001D9F91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */; };
 		EEDFDA8824AFC6B8001D9F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8724AFC6B8001D9F91 /* Assets.xcassets */; };
 		EEDFDA8B24AFC6B8001D9F91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8A24AFC6B8001D9F91 /* Preview Assets.xcassets */; };
 		EEDFDAA124AFC6B8001D9F91 /* Compliments_BetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAA024AFC6B8001D9F91 /* Compliments_BetaUITests.swift */; };
-		EEDFDAB524AFC704001D9F91 /* ComplimentsAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAB424AFC704001D9F91 /* ComplimentsAppClipApp.swift */; };
-		EEDFDAB924AFC704001D9F91 /* ClipAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDAB824AFC704001D9F91 /* ClipAssets.xcassets */; };
-		EEDFDABC24AFC704001D9F91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDABB24AFC704001D9F91 /* Preview Assets.xcassets */; };
-		EEDFDAC824AFC704001D9F91 /* ComplimentsAppClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAC724AFC704001D9F91 /* ComplimentsAppClipTests.swift */; };
-		EEDFDAD324AFC704001D9F91 /* ComplimentsAppClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAD224AFC704001D9F91 /* ComplimentsAppClipUITests.swift */; };
-		EEDFDAD724AFC704001D9F91 /* ComplimentsAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = EEDFDAB224AFC704001D9F91 /* ComplimentsAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EEDFDAE324AFCCC6001D9F91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */; };
 		EEDFDAE524AFCD87001D9F91 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDAE424AFCD87001D9F91 /* Shared.xcassets */; };
-		EEDFDAE624AFCD8B001D9F91 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDAE424AFCD87001D9F91 /* Shared.xcassets */; };
 		EEDFDAE824AFDEFF001D9F91 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAE724AFDEFF001D9F91 /* Color+Extension.swift */; };
-		EEDFDAE924AFDF54001D9F91 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAE724AFDEFF001D9F91 /* Color+Extension.swift */; };
 		EEDFDAEB24B01950001D9F91 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEA24B01950001D9F91 /* QuestionView.swift */; };
 		EEDFDAED24B01968001D9F91 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */; };
 		EEDFDAEF24B0198C001D9F91 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */; };
-		EEDFDAF024B019EB001D9F91 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEA24B01950001D9F91 /* QuestionView.swift */; };
-		EEDFDAF124B019EF001D9F91 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */; };
-		EEDFDAF224B019F3001D9F91 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */; };
 		EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */; };
-		EEDFDAF924B02162001D9F91 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */; };
 		EEDFDAFB24B0E270001D9F91 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */; };
-		EEDFDAFC24B0E2BC001D9F91 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */; };
 		EEDFDAFE24B0E2DE001D9F91 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFD24B0E2DE001D9F91 /* Question.swift */; };
-		EEDFDAFF24B13C13001D9F91 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAFD24B0E2DE001D9F91 /* Question.swift */; };
 		EEEB2522251A6E380068191E /* StarButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2521251A6E380068191E /* StarButtonStyle.swift */; };
 		EEEB252A251A6E7A0068191E /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2529251A6E7A0068191E /* ActionButtonStyle.swift */; };
 		EEEB2538251A6EAE0068191E /* AnyTransition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2537251A6EAE0068191E /* AnyTransition+Extensions.swift */; };
-		EEEB253F251A6EC10068191E /* AnyTransition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2537251A6EAE0068191E /* AnyTransition+Extensions.swift */; };
 		EEEB254D251A6ED90068191E /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB254C251A6ED90068191E /* StarButton.swift */; };
-		EEEB2554251A6F530068191E /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB254C251A6ED90068191E /* StarButton.swift */; };
-		EEEB255B251A6F570068191E /* StarButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2521251A6E380068191E /* StarButtonStyle.swift */; };
-		EEEB2562251A6F5A0068191E /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2529251A6E7A0068191E /* ActionButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EED5C3E8252A5A580078C132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEDFDA7824AFC6B7001D9F91 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EED5C3DA252A5A580078C132;
+			remoteInfo = "we-compliment-clip";
+		};
 		EEDFDA9224AFC6B8001D9F91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EEDFDA7824AFC6B7001D9F91 /* Project object */;
@@ -60,27 +65,6 @@
 			remoteGlobalIDString = EEDFDA7F24AFC6B7001D9F91;
 			remoteInfo = "Compliments-Beta";
 		};
-		EEDFDAC424AFC704001D9F91 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EEDFDA7824AFC6B7001D9F91 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EEDFDAB124AFC704001D9F91;
-			remoteInfo = ComplimentsAppClip;
-		};
-		EEDFDACF24AFC704001D9F91 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EEDFDA7824AFC6B7001D9F91 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EEDFDAB124AFC704001D9F91;
-			remoteInfo = ComplimentsAppClip;
-		};
-		EEDFDAD524AFC704001D9F91 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EEDFDA7824AFC6B7001D9F91 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EEDFDAB124AFC704001D9F91;
-			remoteInfo = ComplimentsAppClip;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,7 +74,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
 			dstSubfolderSpec = 16;
 			files = (
-				EEDFDAD724AFC704001D9F91 /* ComplimentsAppClip.app in Embed App Clips */,
+				EED5C3EA252A5A580078C132 /* we-compliment-clip.app in Embed App Clips */,
 			);
 			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +82,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EED5C3DB252A5A580078C132 /* we-compliment-clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we-compliment-clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeComplimentAppClip.swift; sourceTree = "<group>"; };
+		EED5C3E1252A5A580078C132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EED5C3E4252A5A580078C132 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EED5C3E6252A5A580078C132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EED5C3E7252A5A580078C132 /* we_compliment_clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = we_compliment_clip.entitlements; sourceTree = "<group>"; };
 		EEDFDA8024AFC6B7001D9F91 /* Compliments-Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compliments-Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDFDA8324AFC6B7001D9F91 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,18 +99,6 @@
 		EEDFDA9C24AFC6B8001D9F91 /* Compliments-BetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compliments-BetaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDFDAA024AFC6B8001D9F91 /* Compliments_BetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compliments_BetaUITests.swift; sourceTree = "<group>"; };
 		EEDFDAA224AFC6B8001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEDFDAB224AFC704001D9F91 /* ComplimentsAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplimentsAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDFDAB424AFC704001D9F91 /* ComplimentsAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentsAppClipApp.swift; sourceTree = "<group>"; };
-		EEDFDAB824AFC704001D9F91 /* ClipAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ClipAssets.xcassets; sourceTree = "<group>"; };
-		EEDFDABB24AFC704001D9F91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EEDFDABD24AFC704001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEDFDABE24AFC704001D9F91 /* ComplimentsAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComplimentsAppClip.entitlements; sourceTree = "<group>"; };
-		EEDFDAC324AFC704001D9F91 /* ComplimentsAppClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComplimentsAppClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDFDAC724AFC704001D9F91 /* ComplimentsAppClipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentsAppClipTests.swift; sourceTree = "<group>"; };
-		EEDFDAC924AFC704001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEDFDACE24AFC704001D9F91 /* ComplimentsAppClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComplimentsAppClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDFDAD224AFC704001D9F91 /* ComplimentsAppClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentsAppClipUITests.swift; sourceTree = "<group>"; };
-		EEDFDAD424AFC704001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEDFDAE224AFC8BA001D9F91 /* Compliments-Beta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Compliments-Beta.entitlements"; sourceTree = "<group>"; };
 		EEDFDAE424AFCD87001D9F91 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
 		EEDFDAE724AFDEFF001D9F91 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -137,6 +115,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EED5C3D8252A5A580078C132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEDFDA7D24AFC6B7001D9F91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,39 +143,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEDFDAAF24AFC704001D9F91 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEDFDAC024AFC704001D9F91 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEDFDACB24AFC704001D9F91 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EED5C3DC252A5A580078C132 /* we-compliment-clip */ = {
+			isa = PBXGroup;
+			children = (
+				EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */,
+				EED5C3E1252A5A580078C132 /* Assets.xcassets */,
+				EED5C3E6252A5A580078C132 /* Info.plist */,
+				EED5C3E7252A5A580078C132 /* we_compliment_clip.entitlements */,
+				EED5C3E3252A5A580078C132 /* Preview Content */,
+			);
+			path = "we-compliment-clip";
+			sourceTree = "<group>";
+		};
+		EED5C3E3252A5A580078C132 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EED5C3E4252A5A580078C132 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		EEDFDA7724AFC6B7001D9F91 = {
 			isa = PBXGroup;
 			children = (
 				EEDFDA8224AFC6B7001D9F91 /* Compliments-Beta */,
 				EEDFDA9424AFC6B8001D9F91 /* Compliments-BetaTests */,
 				EEDFDA9F24AFC6B8001D9F91 /* Compliments-BetaUITests */,
-				EEDFDAB324AFC704001D9F91 /* ComplimentsAppClip */,
-				EEDFDAC624AFC704001D9F91 /* ComplimentsAppClipTests */,
-				EEDFDAD124AFC704001D9F91 /* ComplimentsAppClipUITests */,
+				EED5C3DC252A5A580078C132 /* we-compliment-clip */,
 				EEDFDA8124AFC6B7001D9F91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -201,9 +183,7 @@
 				EEDFDA8024AFC6B7001D9F91 /* Compliments-Beta.app */,
 				EEDFDA9124AFC6B8001D9F91 /* Compliments-BetaTests.xctest */,
 				EEDFDA9C24AFC6B8001D9F91 /* Compliments-BetaUITests.xctest */,
-				EEDFDAB224AFC704001D9F91 /* ComplimentsAppClip.app */,
-				EEDFDAC324AFC704001D9F91 /* ComplimentsAppClipTests.xctest */,
-				EEDFDACE24AFC704001D9F91 /* ComplimentsAppClipUITests.xctest */,
+				EED5C3DB252A5A580078C132 /* we-compliment-clip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,44 +224,6 @@
 				EEDFDAA224AFC6B8001D9F91 /* Info.plist */,
 			);
 			path = "Compliments-BetaUITests";
-			sourceTree = "<group>";
-		};
-		EEDFDAB324AFC704001D9F91 /* ComplimentsAppClip */ = {
-			isa = PBXGroup;
-			children = (
-				EEDFDAB424AFC704001D9F91 /* ComplimentsAppClipApp.swift */,
-				EEDFDAB824AFC704001D9F91 /* ClipAssets.xcassets */,
-				EEDFDABD24AFC704001D9F91 /* Info.plist */,
-				EEDFDABE24AFC704001D9F91 /* ComplimentsAppClip.entitlements */,
-				EEDFDABA24AFC704001D9F91 /* Preview Content */,
-			);
-			path = ComplimentsAppClip;
-			sourceTree = "<group>";
-		};
-		EEDFDABA24AFC704001D9F91 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				EEDFDABB24AFC704001D9F91 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		EEDFDAC624AFC704001D9F91 /* ComplimentsAppClipTests */ = {
-			isa = PBXGroup;
-			children = (
-				EEDFDAC724AFC704001D9F91 /* ComplimentsAppClipTests.swift */,
-				EEDFDAC924AFC704001D9F91 /* Info.plist */,
-			);
-			path = ComplimentsAppClipTests;
-			sourceTree = "<group>";
-		};
-		EEDFDAD124AFC704001D9F91 /* ComplimentsAppClipUITests */ = {
-			isa = PBXGroup;
-			children = (
-				EEDFDAD224AFC704001D9F91 /* ComplimentsAppClipUITests.swift */,
-				EEDFDAD424AFC704001D9F91 /* Info.plist */,
-			);
-			path = ComplimentsAppClipUITests;
 			sourceTree = "<group>";
 		};
 		EEEB2569251A6F640068191E /* Data */ = {
@@ -331,6 +273,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EED5C3DA252A5A580078C132 /* we-compliment-clip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EED5C3EB252A5A580078C132 /* Build configuration list for PBXNativeTarget "we-compliment-clip" */;
+			buildPhases = (
+				EED5C3D7252A5A580078C132 /* Sources */,
+				EED5C3D8252A5A580078C132 /* Frameworks */,
+				EED5C3D9252A5A580078C132 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "we-compliment-clip";
+			productName = "we-compliment-clip";
+			productReference = EED5C3DB252A5A580078C132 /* we-compliment-clip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		EEDFDA7F24AFC6B7001D9F91 /* Compliments-Beta */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEDFDAA524AFC6B8001D9F91 /* Build configuration list for PBXNativeTarget "Compliments-Beta" */;
@@ -343,7 +302,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EEDFDAD624AFC704001D9F91 /* PBXTargetDependency */,
+				EED5C3E9252A5A580078C132 /* PBXTargetDependency */,
 			);
 			name = "Compliments-Beta";
 			productName = "Compliments-Beta";
@@ -386,59 +345,6 @@
 			productReference = EEDFDA9C24AFC6B8001D9F91 /* Compliments-BetaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		EEDFDAB124AFC704001D9F91 /* ComplimentsAppClip */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EEDFDAD824AFC704001D9F91 /* Build configuration list for PBXNativeTarget "ComplimentsAppClip" */;
-			buildPhases = (
-				EEDFDAAE24AFC704001D9F91 /* Sources */,
-				EEDFDAAF24AFC704001D9F91 /* Frameworks */,
-				EEDFDAB024AFC704001D9F91 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ComplimentsAppClip;
-			productName = ComplimentsAppClip;
-			productReference = EEDFDAB224AFC704001D9F91 /* ComplimentsAppClip.app */;
-			productType = "com.apple.product-type.application.on-demand-install-capable";
-		};
-		EEDFDAC224AFC704001D9F91 /* ComplimentsAppClipTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EEDFDADC24AFC704001D9F91 /* Build configuration list for PBXNativeTarget "ComplimentsAppClipTests" */;
-			buildPhases = (
-				EEDFDABF24AFC704001D9F91 /* Sources */,
-				EEDFDAC024AFC704001D9F91 /* Frameworks */,
-				EEDFDAC124AFC704001D9F91 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EEDFDAC524AFC704001D9F91 /* PBXTargetDependency */,
-			);
-			name = ComplimentsAppClipTests;
-			productName = ComplimentsAppClipTests;
-			productReference = EEDFDAC324AFC704001D9F91 /* ComplimentsAppClipTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		EEDFDACD24AFC704001D9F91 /* ComplimentsAppClipUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EEDFDADF24AFC704001D9F91 /* Build configuration list for PBXNativeTarget "ComplimentsAppClipUITests" */;
-			buildPhases = (
-				EEDFDACA24AFC704001D9F91 /* Sources */,
-				EEDFDACB24AFC704001D9F91 /* Frameworks */,
-				EEDFDACC24AFC704001D9F91 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EEDFDAD024AFC704001D9F91 /* PBXTargetDependency */,
-			);
-			name = ComplimentsAppClipUITests;
-			productName = ComplimentsAppClipUITests;
-			productReference = EEDFDACE24AFC704001D9F91 /* ComplimentsAppClipUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -448,6 +354,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					EED5C3DA252A5A580078C132 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
 					EEDFDA7F24AFC6B7001D9F91 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -458,17 +367,6 @@
 					EEDFDA9B24AFC6B8001D9F91 = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = EEDFDA7F24AFC6B7001D9F91;
-					};
-					EEDFDAB124AFC704001D9F91 = {
-						CreatedOnToolsVersion = 12.0;
-					};
-					EEDFDAC224AFC704001D9F91 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = EEDFDAB124AFC704001D9F91;
-					};
-					EEDFDACD24AFC704001D9F91 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = EEDFDAB124AFC704001D9F91;
 					};
 				};
 			};
@@ -488,14 +386,22 @@
 				EEDFDA7F24AFC6B7001D9F91 /* Compliments-Beta */,
 				EEDFDA9024AFC6B8001D9F91 /* Compliments-BetaTests */,
 				EEDFDA9B24AFC6B8001D9F91 /* Compliments-BetaUITests */,
-				EEDFDAB124AFC704001D9F91 /* ComplimentsAppClip */,
-				EEDFDAC224AFC704001D9F91 /* ComplimentsAppClipTests */,
-				EEDFDACD24AFC704001D9F91 /* ComplimentsAppClipUITests */,
+				EED5C3DA252A5A580078C132 /* we-compliment-clip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EED5C3D9252A5A580078C132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED5C3E5252A5A580078C132 /* Preview Assets.xcassets in Resources */,
+				EED5C3E2252A5A580078C132 /* Assets.xcassets in Resources */,
+				EED5C3F2252A5A740078C132 /* Shared.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEDFDA7E24AFC6B7001D9F91 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,33 +426,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEDFDAB024AFC704001D9F91 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEDFDABC24AFC704001D9F91 /* Preview Assets.xcassets in Resources */,
-				EEDFDAB924AFC704001D9F91 /* ClipAssets.xcassets in Resources */,
-				EEDFDAE624AFCD8B001D9F91 /* Shared.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEDFDAC124AFC704001D9F91 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEDFDACC24AFC704001D9F91 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EED5C3D7252A5A580078C132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED5C3F7252A5A780078C132 /* Question.swift in Sources */,
+				EED5C40E252A5A8C0078C132 /* CircleButtonStyle.swift in Sources */,
+				EED5C412252A5A8C0078C132 /* ContentView.swift in Sources */,
+				EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */,
+				EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */,
+				EED5C410252A5A8C0078C132 /* ActionButtonStyle.swift in Sources */,
+				EED5C406252A5A860078C132 /* AnyTransition+Extensions.swift in Sources */,
+				EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */,
+				EED5C40F252A5A8C0078C132 /* QuestionView.swift in Sources */,
+				EED5C3FC252A5A7D0078C132 /* Color+Extension.swift in Sources */,
+				EED5C40D252A5A8C0078C132 /* StarButtonStyle.swift in Sources */,
+				EED5C411252A5A8C0078C132 /* CircleButtonView.swift in Sources */,
+				EED5C40B252A5A8C0078C132 /* SuccessView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEDFDA7C24AFC6B7001D9F91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,45 +484,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEDFDAAE24AFC704001D9F91 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEDFDAF224B019F3001D9F91 /* CircleButtonView.swift in Sources */,
-				EEDFDAF924B02162001D9F91 /* UIWindow+Extension.swift in Sources */,
-				EEDFDAF024B019EB001D9F91 /* QuestionView.swift in Sources */,
-				EEEB2562251A6F5A0068191E /* ActionButtonStyle.swift in Sources */,
-				EEDFDAF124B019EF001D9F91 /* CircleButtonStyle.swift in Sources */,
-				EEDFDAFC24B0E2BC001D9F91 /* SuccessView.swift in Sources */,
-				EEDFDAFF24B13C13001D9F91 /* Question.swift in Sources */,
-				EEEB253F251A6EC10068191E /* AnyTransition+Extensions.swift in Sources */,
-				EEEB255B251A6F570068191E /* StarButtonStyle.swift in Sources */,
-				EEDFDAB524AFC704001D9F91 /* ComplimentsAppClipApp.swift in Sources */,
-				EEDFDAE924AFDF54001D9F91 /* Color+Extension.swift in Sources */,
-				EEDFDAE324AFCCC6001D9F91 /* ContentView.swift in Sources */,
-				EEEB2554251A6F530068191E /* StarButton.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEDFDABF24AFC704001D9F91 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEDFDAC824AFC704001D9F91 /* ComplimentsAppClipTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEDFDACA24AFC704001D9F91 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEDFDAD324AFC704001D9F91 /* ComplimentsAppClipUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EED5C3E9252A5A580078C132 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EED5C3DA252A5A580078C132 /* we-compliment-clip */;
+			targetProxy = EED5C3E8252A5A580078C132 /* PBXContainerItemProxy */;
+		};
 		EEDFDA9324AFC6B8001D9F91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EEDFDA7F24AFC6B7001D9F91 /* Compliments-Beta */;
@@ -631,24 +502,57 @@
 			target = EEDFDA7F24AFC6B7001D9F91 /* Compliments-Beta */;
 			targetProxy = EEDFDA9D24AFC6B8001D9F91 /* PBXContainerItemProxy */;
 		};
-		EEDFDAC524AFC704001D9F91 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EEDFDAB124AFC704001D9F91 /* ComplimentsAppClip */;
-			targetProxy = EEDFDAC424AFC704001D9F91 /* PBXContainerItemProxy */;
-		};
-		EEDFDAD024AFC704001D9F91 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EEDFDAB124AFC704001D9F91 /* ComplimentsAppClip */;
-			targetProxy = EEDFDACF24AFC704001D9F91 /* PBXContainerItemProxy */;
-		};
-		EEDFDAD624AFC704001D9F91 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EEDFDAB124AFC704001D9F91 /* ComplimentsAppClip */;
-			targetProxy = EEDFDAD524AFC704001D9F91 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		EED5C3EC252A5A580078C132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
+				DEVELOPMENT_TEAM = 92H4P6C5WB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "we-compliment-clip/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.we-compliment.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EED5C3ED252A5A580078C132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
+				DEVELOPMENT_TEAM = 92H4P6C5WB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "we-compliment-clip/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.we-compliment.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EEDFDAA324AFC6B8001D9F91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -783,7 +687,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.we-compliment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -808,7 +712,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.we-compliment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -899,150 +803,18 @@
 			};
 			name = Release;
 		};
-		EEDFDAD924AFC704001D9F91 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ComplimentsAppClip/ComplimentsAppClip.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ComplimentsAppClip/Preview Content\"";
-				DEVELOPMENT_TEAM = 92H4P6C5WB;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ComplimentsAppClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1;
-				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.Clip";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		EEDFDADA24AFC704001D9F91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ComplimentsAppClip/ComplimentsAppClip.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ComplimentsAppClip/Preview Content\"";
-				DEVELOPMENT_TEAM = 92H4P6C5WB;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ComplimentsAppClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1;
-				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.Clip";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		EEDFDADD24AFC704001D9F91 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92H4P6C5WB;
-				INFOPLIST_FILE = ComplimentsAppClipTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.ComplimentsAppClipTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComplimentsAppClip.app/ComplimentsAppClip";
-			};
-			name = Debug;
-		};
-		EEDFDADE24AFC704001D9F91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92H4P6C5WB;
-				INFOPLIST_FILE = ComplimentsAppClipTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.ComplimentsAppClipTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComplimentsAppClip.app/ComplimentsAppClip";
-			};
-			name = Release;
-		};
-		EEDFDAE024AFC704001D9F91 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92H4P6C5WB;
-				INFOPLIST_FILE = ComplimentsAppClipUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.ComplimentsAppClipUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ComplimentsAppClip;
-			};
-			name = Debug;
-		};
-		EEDFDAE124AFC704001D9F91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92H4P6C5WB;
-				INFOPLIST_FILE = ComplimentsAppClipUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.derikflanary.Compliments-Beta.ComplimentsAppClipUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ComplimentsAppClip;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EED5C3EB252A5A580078C132 /* Build configuration list for PBXNativeTarget "we-compliment-clip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED5C3EC252A5A580078C132 /* Debug */,
+				EED5C3ED252A5A580078C132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EEDFDA7B24AFC6B7001D9F91 /* Build configuration list for PBXProject "Compliments-Beta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1075,33 +847,6 @@
 			buildConfigurations = (
 				EEDFDAAC24AFC6B8001D9F91 /* Debug */,
 				EEDFDAAD24AFC6B8001D9F91 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EEDFDAD824AFC704001D9F91 /* Build configuration list for PBXNativeTarget "ComplimentsAppClip" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EEDFDAD924AFC704001D9F91 /* Debug */,
-				EEDFDADA24AFC704001D9F91 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EEDFDADC24AFC704001D9F91 /* Build configuration list for PBXNativeTarget "ComplimentsAppClipTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EEDFDADD24AFC704001D9F91 /* Debug */,
-				EEDFDADE24AFC704001D9F91 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EEDFDADF24AFC704001D9F91 /* Build configuration list for PBXNativeTarget "ComplimentsAppClipUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EEDFDAE024AFC704001D9F91 /* Debug */,
-				EEDFDAE124AFC704001D9F91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

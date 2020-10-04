@@ -4,7 +4,7 @@
 <dict>
     <key>com.apple.developer.parent-application-identifiers</key>
     <array>
-        <string>$(AppIdentifierPrefix)com.derikflanary.Compliments-Beta</string>
+        <string>$(AppIdentifierPrefix)com.derikflanary.we-compliment</string>
     </array>
 </dict>
 </plist>
