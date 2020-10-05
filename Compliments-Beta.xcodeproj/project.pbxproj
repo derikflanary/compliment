@@ -512,6 +512,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -536,6 +537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -677,6 +679,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Compliments-Beta/Compliments-Beta.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Compliments-Beta/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -702,6 +705,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Compliments-Beta/Compliments-Beta.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Compliments-Beta/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
