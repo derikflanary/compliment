@@ -21,83 +21,97 @@ struct ContentView: View {
     // MARK: - Properties
     
     private let potentialAnswers = [Answer(title: "Bronze", color: .orange), Answer(title: "Silver", color: .gray), Answer(title: "Gold", color: .yellow)]
+    private let textViewId = "textViewId"
+    private let textViewHeight: CGFloat = 200
     
     
     // MARK: - Body
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            HStack {
-                VStack {
-                    Text("compliment")
-                        .font(.system(size: 36, weight: .light, design: .default))
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 2)
-                        .foregroundColor(.appTintColor)
-                        .cornerRadius(4)
-                        .overlay(
+        ScrollViewReader { scrollProxy in
+            
+            ScrollView(showsIndicators: false) {
+                HStack {
+                    VStack {
+                        Text("compliment")
+                            .font(.system(size: 36, weight: .light, design: .default))
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 2)
+                            .foregroundColor(.appTintColor)
+                            .cornerRadius(4)
+                            .overlay(
                                 RoundedRectangle(cornerRadius: 4)
                                     .stroke(Color.appTintColor, lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                        )
-                    
-                    if isComplete {
-                        Spacer()
+                            )
+                            .onTapGesture(count: 3, perform: {
+                                isComplete = false
+                            })
                         
-                        SuccessView(isComplete: $isComplete)
-                            .transition(.scale)
-                            .padding(.top, 60)
-                    }
-                    
-                    Group {
-                        QuestionView(selectedAnswer: $selectedAnswer, question: Question(title: "Select an award level for this employee based on the service you received", answers: potentialAnswers))
-                            .padding(.top, 60)
-                        
-                        HStack {
-                            Text("Tell us why? (optional)")
-                                .font(.title3)
-                            
+                        if isComplete {
                             Spacer()
+                            
+                            SuccessView(isComplete: $isComplete)
+                                .transition(.scale)
+                                .padding(.top, 60)
                         }
-                        .padding(.top, 40)
-                        .padding(.bottom, 8)
                         
-                        TextEditor(text: $message)
-                            .cornerRadius(10)
-                            .overlay(
+                        Group {
+                            QuestionView(selectedAnswer: $selectedAnswer, question: Question(title: "Select an award level for this employee based on the service you received", answers: potentialAnswers))
+                                .padding(.top, 60)
+                            
+                            HStack {
+                                Text("Tell us why? (optional)")
+                                    .font(.title3)
+                                
+                                Spacer()
+                            }
+                            .padding(.top, 40)
+                            .padding(.bottom, 8)
+                            
+                            TextEditor(text: $message)
+                                .cornerRadius(10)
+                                .overlay(
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(Color(.label), lineWidth: 2)
-                            )
-                            .frame(height: 200)
+                                )
+                                .onTapGesture {
+                                    delayOnMainThread(0.5) {
+                                        withAnimation {
+                                            scrollProxy.scrollTo(textViewId, anchor: .bottom)
+                                        }
+                                    }
+                                }
+                                .frame(height: textViewHeight)
+                                .id(textViewId)
+                            
+                            Button(action: {
+                                withAnimation(.spring()) {
+                                    isComplete = true
+                                    showDownloadPrompt = true
+                                    UIWindow.currentWindow?.endEditing(true)
+                                    UINotificationFeedbackGenerator().notificationOccurred(.success)
+                                }
+                            }, label: {
+                                Text("Submit")
+                                    .font(.headline)
+                                    .bold()
+                            })
+                            .buttonStyle(ActionButtonStyle())
+                            .padding(.vertical, 32)
+                            .disabled(selectedAnswer == nil)
+                            .opacity(selectedAnswer == nil ? 0.2 : 1.0)
+                        }.opacity(isComplete ? 0.0 : 1)
                         
-                        Button(action: {
-                            withAnimation(.spring()) {
-                                isComplete = true
-                                showDownloadPrompt = true
-                                UIWindow.currentWindow?.endEditing(true)
-                            }
-                        }, label: {
-                            Text("Submit")
-                                .font(.headline)
-                                .bold()
-                        })
-                        .buttonStyle(ActionButtonStyle())
-                        .padding(.vertical, 32)
-                        .disabled(selectedAnswer == nil)
-                        .opacity(selectedAnswer == nil ? 0.2 : 1.0)
-                    }.opacity(isComplete ? 0.0 : 1)
-                
-                    
-                    Spacer()
+                        
+                        Spacer()
+                    }
+                    .padding(.horizontal, 40)
+                    .padding(.vertical)
                 }
-                .padding(.horizontal, 40)
-                .padding(.vertical)
             }
-        }
-        .onTapGesture {
-            UIWindow.currentWindow?.endEditing(true)
-        }
-        .appStoreOverlay(isPresented: $showDownloadPrompt) {
-            SKOverlay.AppConfiguration(appIdentifier: "1522177910", position: .bottom)
+            .onTapGesture {
+                UIWindow.currentWindow?.endEditing(true)
+            }
         }
     }
 }

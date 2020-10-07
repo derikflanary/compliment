@@ -40,6 +40,7 @@ struct QuestionView: View {
                         StarButton(isSelected: answer == selectedAnswer, title: answer.title, color: answer.color) {
                             withAnimation(Animation.spring(dampingFraction: 0.5).speed(1.5)) {
                                 self.selectedAnswer = answer
+                                UIImpactFeedbackGenerator().impactOccurred()
                             }
                         }
                     }
