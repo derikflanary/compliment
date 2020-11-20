@@ -60,6 +60,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(selectedAnswer: .constant(nil), question: Question(title: "The service provided was", answers: [Answer(title: "Alright", color: .orange), Answer(title: "Great", color: .gray), Answer(title: "Amazing", color: .yellow)]))
+        QuestionView(selectedAnswer: .constant(nil), question: Question(title: "The service provided was", answers: [Answer(title: "Alright", color: .orange, value: 1), Answer(title: "Great", color: .gray, value: 2), Answer(title: "Amazing", color: .yellow, value: 3)]))
     }
 }

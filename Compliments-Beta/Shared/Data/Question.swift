@@ -17,4 +17,5 @@ struct Answer: Identifiable, Equatable {
     let id: String = UUID().uuidString
     var title: String
     var color: Color
+    var value: Int
 }

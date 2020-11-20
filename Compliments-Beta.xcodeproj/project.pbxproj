@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE21004C256041E6004DE562 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* Network.swift */; };
+		EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
 		EE6B5898252E87D2006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
+		EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */; };
 		EED5C3E2252A5A580078C132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E1252A5A580078C132 /* Assets.xcassets */; };
 		EED5C3E5252A5A580078C132 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E4252A5A580078C132 /* Preview Assets.xcassets */; };
@@ -85,7 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EE21004B256041E6004DE562 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		EE21004B256041E6004DE562 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE6B5892252E87B5006C7EAF /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		EED5C3DB252A5A580078C132 /* we-compliment-clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we-compliment-clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeComplimentAppClip.swift; sourceTree = "<group>"; };
@@ -235,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				EEDFDAFD24B0E2DE001D9F91 /* Question.swift */,
-				EE21004B256041E6004DE562 /* Network.swift */,
+				EE21004B256041E6004DE562 /* NetworkManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -445,6 +446,7 @@
 				EED5C412252A5A8C0078C132 /* ContentView.swift in Sources */,
 				EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */,
 				EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */,
+				EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */,
 				EED5C410252A5A8C0078C132 /* ActionButtonStyle.swift in Sources */,
 				EED5C406252A5A860078C132 /* AnyTransition+Extensions.swift in Sources */,
 				EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */,
@@ -466,7 +468,7 @@
 				EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEEB2522251A6E380068191E /* StarButtonStyle.swift in Sources */,
 				EEDFDA8624AFC6B7001D9F91 /* ContentView.swift in Sources */,
-				EE21004C256041E6004DE562 /* Network.swift in Sources */,
+				EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */,
 				EEDFDAE824AFDEFF001D9F91 /* Color+Extension.swift in Sources */,
 				EEEB2538251A6EAE0068191E /* AnyTransition+Extensions.swift in Sources */,
 				EEDFDAFB24B0E270001D9F91 /* SuccessView.swift in Sources */,

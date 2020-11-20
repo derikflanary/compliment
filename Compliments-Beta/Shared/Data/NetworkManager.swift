@@ -7,8 +7,9 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
-class Network {
+class NetworkManager: ObservableObject {
     
     public enum HTTPMethod: String {
         case get = "GET"
@@ -20,13 +21,16 @@ class Network {
 
     var subscriber: AnyCancellable?
     
-    func sendCompliment(with employeeId: Int, comment: String, rating: Int) {
-        guard let url = URL(string: "http://www.we-compliment.com/api/appPort") else { return }
+    @Published var isComplete: Bool = false
+    
+    
+    func sendCompliment(with employeeId: Int, employerId: Int, comment: String, rating: Int) {
+        guard let url = URL(string: "https://www.we-compliment.com/api/appPort") else { return }
         
         var params: [String: Any] = [:]
         params["email"] = "bryan.d.burnham@gmail.com"
         params["password"] = "Phishing4Compliments!1100"
-        params["employer_id"] = 1
+        params["employer_id"] = employerId
         params["employee_id"] = employeeId
         params["comment"] = comment
         params["rating"] = rating
@@ -38,19 +42,21 @@ class Network {
         let session = URLSession(configuration: .default)
         
         subscriber = session.dataTaskPublisher(for: request)
-            .tryMap { output in
+            .tryMap { output -> Any in
                 if let error = self.error(for: output.response, data: output.data) {
                     throw error
                 }
                 return try JSONSerialization.jsonObject(with: output.data, options: [])
             }
-            .eraseToAnyPublisher()
+            .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 print(completion)
             }, receiveValue: { response in
                 print(response)
+                withAnimation(.spring()) {
+                    self.isComplete = true
+                }
             })
-        
     }
     
     private func error(for response: URLResponse?, data: Data) -> APIError? {

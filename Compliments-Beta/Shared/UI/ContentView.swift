@@ -10,17 +10,22 @@ import StoreKit
 
 struct ContentView: View {
     
+    
+    // MARK: - State Objects
+    
+    @StateObject var network = NetworkManager()
+    
+    
     // MARK: - State
     
     @State private var message: String = ""
-    @State private var isComplete = false
     @State private var showDownloadPrompt = false
     @State private var selectedAnswer: Answer?
     
     
     // MARK: - Properties
     
-    private let potentialAnswers = [Answer(title: "Bronze", color: .orange), Answer(title: "Silver", color: .gray), Answer(title: "Gold", color: .yellow)]
+    private let potentialAnswers = [Answer(title: "Bronze", color: .orange, value: 1), Answer(title: "Silver", color: .gray, value: 2), Answer(title: "Gold", color: .yellow, value: 3)]
     private let textViewId = "textViewId"
     private let textViewHeight: CGFloat = 200
     
@@ -44,15 +49,19 @@ struct ContentView: View {
                                     .stroke(Color.appTintColor, lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                             )
                             .onTapGesture(count: 3, perform: {
-                                isComplete = false
+                                network.isComplete = false
                             })
                         
-                        if isComplete {
+                        if network.isComplete {
                             Spacer()
                             
-                            SuccessView(isComplete: $isComplete)
+                            SuccessView(isComplete: $network.isComplete)
                                 .transition(.scale)
                                 .padding(.top, 60)
+                                .onAppear {
+                                    showDownloadPrompt = true
+                                    UINotificationFeedbackGenerator().notificationOccurred(.success)
+                                }
                         }
                         
                         Group {
@@ -85,12 +94,7 @@ struct ContentView: View {
                                 .id(textViewId)
                             
                             Button(action: {
-                                withAnimation(.spring()) {
-                                    isComplete = true
-                                    showDownloadPrompt = true
-                                    UIWindow.currentWindow?.endEditing(true)
-                                    UINotificationFeedbackGenerator().notificationOccurred(.success)
-                                }
+                                sendCompliment()
                             }, label: {
                                 Text("Submit")
                                     .font(.headline)
@@ -100,7 +104,7 @@ struct ContentView: View {
                             .padding(.vertical, 32)
                             .disabled(selectedAnswer == nil)
                             .opacity(selectedAnswer == nil ? 0.2 : 1.0)
-                        }.opacity(isComplete ? 0.0 : 1)
+                        }.opacity(network.isComplete ? 0.0 : 1)
                         
                         
                         Spacer()
@@ -113,6 +117,12 @@ struct ContentView: View {
                 UIWindow.currentWindow?.endEditing(true)
             }
         }
+    }
+    
+    func sendCompliment() {
+        UIWindow.currentWindow?.endEditing(true)
+        guard let value = selectedAnswer?.value else { return }
+        network.sendCompliment(with: 1, employerId: 2, comment: message, rating: value)
     }
 }
 
