@@ -12,7 +12,7 @@ struct we_compliment_clipApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ClipContentView()
                 .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                     respondTo(activity)
                 }

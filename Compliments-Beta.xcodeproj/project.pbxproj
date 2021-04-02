@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE16F5042616B76500147715 /* AppContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5032616B76500147715 /* AppContentView.swift */; };
+		EE16F50A2616B77C00147715 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5092616B77C00147715 /* LoginView.swift */; };
+		EE16F5102616BC7500147715 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F50F2616BC7500147715 /* DashboardView.swift */; };
 		EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
 		EE6B5898252E87D2006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
@@ -27,9 +30,9 @@
 		EED5C40F252A5A8C0078C132 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEA24B01950001D9F91 /* QuestionView.swift */; };
 		EED5C410252A5A8C0078C132 /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB2529251A6E7A0068191E /* ActionButtonStyle.swift */; };
 		EED5C411252A5A8C0078C132 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */; };
-		EED5C412252A5A8C0078C132 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */; };
+		EED5C412252A5A8C0078C132 /* ClipContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ClipContentView.swift */; };
 		EEDFDA8424AFC6B7001D9F91 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8324AFC6B7001D9F91 /* MainApp.swift */; };
-		EEDFDA8624AFC6B7001D9F91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */; };
+		EEDFDA8624AFC6B7001D9F91 /* ClipContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDA8524AFC6B7001D9F91 /* ClipContentView.swift */; };
 		EEDFDA8824AFC6B8001D9F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8724AFC6B8001D9F91 /* Assets.xcassets */; };
 		EEDFDA8B24AFC6B8001D9F91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDFDA8A24AFC6B8001D9F91 /* Preview Assets.xcassets */; };
 		EEDFDAA124AFC6B8001D9F91 /* Compliments_BetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFDAA024AFC6B8001D9F91 /* Compliments_BetaUITests.swift */; };
@@ -86,6 +89,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EE16F5032616B76500147715 /* AppContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentView.swift; sourceTree = "<group>"; };
+		EE16F5092616B77C00147715 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EE16F50F2616BC7500147715 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		EE21004B256041E6004DE562 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE6B5892252E87B5006C7EAF /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		EED5C3DB252A5A580078C132 /* we-compliment-clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we-compliment-clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +102,7 @@
 		EED5C3E7252A5A580078C132 /* we_compliment_clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = we_compliment_clip.entitlements; sourceTree = "<group>"; };
 		EEDFDA8024AFC6B7001D9F91 /* Compliments-Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compliments-Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDFDA8324AFC6B7001D9F91 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
-		EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EEDFDA8524AFC6B7001D9F91 /* ClipContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipContentView.swift; sourceTree = "<group>"; };
 		EEDFDA8724AFC6B8001D9F91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEDFDA8A24AFC6B8001D9F91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEDFDA8C24AFC6B8001D9F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -255,7 +261,10 @@
 		EEEB2571251A6F830068191E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				EEDFDA8524AFC6B7001D9F91 /* ContentView.swift */,
+				EEDFDA8524AFC6B7001D9F91 /* ClipContentView.swift */,
+				EE16F5032616B76500147715 /* AppContentView.swift */,
+				EE16F50F2616BC7500147715 /* DashboardView.swift */,
+				EE16F5092616B77C00147715 /* LoginView.swift */,
 				EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */,
 				EEDFDAEA24B01950001D9F91 /* QuestionView.swift */,
 				EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */,
@@ -443,7 +452,7 @@
 			files = (
 				EED5C3F7252A5A780078C132 /* Question.swift in Sources */,
 				EED5C40E252A5A8C0078C132 /* CircleButtonStyle.swift in Sources */,
-				EED5C412252A5A8C0078C132 /* ContentView.swift in Sources */,
+				EED5C412252A5A8C0078C132 /* ClipContentView.swift in Sources */,
 				EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */,
 				EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */,
 				EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */,
@@ -467,13 +476,16 @@
 				EEDFDAEB24B01950001D9F91 /* QuestionView.swift in Sources */,
 				EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEEB2522251A6E380068191E /* StarButtonStyle.swift in Sources */,
-				EEDFDA8624AFC6B7001D9F91 /* ContentView.swift in Sources */,
+				EEDFDA8624AFC6B7001D9F91 /* ClipContentView.swift in Sources */,
 				EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */,
+				EE16F5042616B76500147715 /* AppContentView.swift in Sources */,
 				EEDFDAE824AFDEFF001D9F91 /* Color+Extension.swift in Sources */,
 				EEEB2538251A6EAE0068191E /* AnyTransition+Extensions.swift in Sources */,
 				EEDFDAFB24B0E270001D9F91 /* SuccessView.swift in Sources */,
+				EE16F50A2616B77C00147715 /* LoginView.swift in Sources */,
 				EEEB252A251A6E7A0068191E /* ActionButtonStyle.swift in Sources */,
 				EEDFDAFE24B0E2DE001D9F91 /* Question.swift in Sources */,
+				EE16F5102616BC7500147715 /* DashboardView.swift in Sources */,
 				EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */,
 				EEDFDAEF24B0198C001D9F91 /* CircleButtonStyle.swift in Sources */,
 				EEDFDAED24B01968001D9F91 /* CircleButtonView.swift in Sources */,
@@ -524,7 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -549,7 +561,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -691,7 +703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Compliments-Beta/Compliments-Beta.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"Compliments-Beta/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -717,7 +729,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Compliments-Beta/Compliments-Beta.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"Compliments-Beta/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;

@@ -8,7 +8,7 @@
 import SwiftUI
 import StoreKit
 
-struct ContentView: View {
+struct ClipContentView: View {
     
     
     // MARK: - State Objects
@@ -39,6 +39,7 @@ struct ContentView: View {
                 HStack {
                     VStack {
                         Text("compliment")
+                            .tracking(3)
                             .font(.system(size: 36, weight: .light, design: .default))
                             .padding(.horizontal, 8)
                             .padding(.vertical, 2)
@@ -96,13 +97,17 @@ struct ContentView: View {
                             Button(action: {
                                 sendCompliment()
                             }, label: {
-                                Text("Submit")
-                                    .font(.headline)
-                                    .bold()
+                                if network.isSending {
+                                    ProgressView()
+                                } else {
+                                    Text("Submit")
+                                        .font(.headline)
+                                        .bold()
+                                }
                             })
                             .buttonStyle(ActionButtonStyle())
                             .padding(.vertical, 32)
-                            .disabled(selectedAnswer == nil)
+                            .disabled(selectedAnswer == nil || network.isSending)
                             .opacity(selectedAnswer == nil ? 0.2 : 1.0)
                         }.opacity(network.isComplete ? 0.0 : 1)
                         
@@ -132,7 +137,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            ClipContentView()
         }
     }
 }

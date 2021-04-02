@@ -22,6 +22,7 @@ class NetworkManager: ObservableObject {
     var subscriber: AnyCancellable?
     
     @Published var isComplete: Bool = false
+    @Published var isSending: Bool = false
     
     
     func sendCompliment(with employeeId: Int, employerId: Int, comment: String, rating: Int) {
@@ -40,7 +41,7 @@ class NetworkManager: ObservableObject {
         request.setValue(NetworkKeys.applicationJSON, forHTTPHeaderField: NetworkKeys.contentTypeHeader)
         
         let session = URLSession(configuration: .default)
-        
+        isSending = true
         subscriber = session.dataTaskPublisher(for: request)
             .tryMap { output -> Any in
                 if let error = self.error(for: output.response, data: output.data) {
@@ -50,11 +51,12 @@ class NetworkManager: ObservableObject {
             }
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
-                print(completion)
+                self.isSending = false
             }, receiveValue: { response in
                 print(response)
                 withAnimation(.spring()) {
                     self.isComplete = true
+                    self.isSending = false
                 }
             })
     }
