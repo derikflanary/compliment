@@ -13,8 +13,12 @@ struct LoginView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var failureCount: CGFloat = 0
     
-    var canLogIn: Bool {
+    private let testUserName = "demoUser"
+    private let testPassword = "demo"
+    
+    private var canLogIn: Bool {
         !username.isEmpty && !password.isEmpty
     }
     
@@ -41,9 +45,12 @@ struct LoginView: View {
             TextField("Username", text: $username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 12)
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
             
-            TextField("Password", text: $password)
+            SecureField("Password", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                
             
             Spacer()
             
@@ -56,14 +63,20 @@ struct LoginView: View {
             .padding(.vertical, 32)
             .disabled(!canLogIn)
             .opacity(canLogIn ? 1 : 0.2)
+            .modifier(Shake(animatableData: failureCount))
+            .animation(.spring())
         }
         .padding(.horizontal, 40)
         .padding(.vertical, 20)
     }
 
     func login() {
-        withAnimation {
-            authenticationService.isLoggedIn = true            
+        if username == testUserName && password == testPassword {
+            withAnimation {
+                authenticationService.isLoggedIn = true
+            }
+        } else {
+            failureCount += 1
         }
     }
     

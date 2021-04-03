@@ -10,6 +10,7 @@
 		EE16F5042616B76500147715 /* AppContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5032616B76500147715 /* AppContentView.swift */; };
 		EE16F50A2616B77C00147715 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5092616B77C00147715 /* LoginView.swift */; };
 		EE16F5102616BC7500147715 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F50F2616BC7500147715 /* DashboardView.swift */; };
+		EE16F5162618125500147715 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5152618125500147715 /* Shake.swift */; };
 		EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
 		EE6B5898252E87D2006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
@@ -92,6 +93,7 @@
 		EE16F5032616B76500147715 /* AppContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentView.swift; sourceTree = "<group>"; };
 		EE16F5092616B77C00147715 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EE16F50F2616BC7500147715 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		EE16F5152618125500147715 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		EE21004B256041E6004DE562 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE6B5892252E87B5006C7EAF /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		EED5C3DB252A5A580078C132 /* we-compliment-clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we-compliment-clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +274,7 @@
 				EEEB2521251A6E380068191E /* StarButtonStyle.swift */,
 				EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */,
 				EEEB254C251A6ED90068191E /* StarButton.swift */,
+				EE16F5152618125500147715 /* Shake.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				EEDFDAFE24B0E2DE001D9F91 /* Question.swift in Sources */,
 				EE16F5102616BC7500147715 /* DashboardView.swift in Sources */,
 				EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */,
+				EE16F5162618125500147715 /* Shake.swift in Sources */,
 				EEDFDAEF24B0198C001D9F91 /* CircleButtonStyle.swift in Sources */,
 				EEDFDAED24B01968001D9F91 /* CircleButtonView.swift in Sources */,
 				EEDFDA8424AFC6B7001D9F91 /* MainApp.swift in Sources */,
