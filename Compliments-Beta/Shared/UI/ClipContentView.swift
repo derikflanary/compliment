@@ -121,6 +121,7 @@ struct ClipContentView: View {
             .onTapGesture {
                 UIWindow.currentWindow?.endEditing(true)
             }
+            .readableWidth()
         }
     }
     

@@ -11,6 +11,9 @@
 		EE16F50A2616B77C00147715 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5092616B77C00147715 /* LoginView.swift */; };
 		EE16F5102616BC7500147715 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F50F2616BC7500147715 /* DashboardView.swift */; };
 		EE16F5162618125500147715 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5152618125500147715 /* Shake.swift */; };
+		EE16F5242618164B00147715 /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5232618164B00147715 /* ReadableWidth.swift */; };
+		EE16F5292618168300147715 /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5232618164B00147715 /* ReadableWidth.swift */; };
+		EE16F52E2618168700147715 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5152618125500147715 /* Shake.swift */; };
 		EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
 		EE6B5898252E87D2006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
@@ -94,6 +97,7 @@
 		EE16F5092616B77C00147715 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EE16F50F2616BC7500147715 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		EE16F5152618125500147715 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		EE16F5232618164B00147715 /* ReadableWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableWidth.swift; sourceTree = "<group>"; };
 		EE21004B256041E6004DE562 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE6B5892252E87B5006C7EAF /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		EED5C3DB252A5A580078C132 /* we-compliment-clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we-compliment-clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +279,7 @@
 				EEDFDAEC24B01968001D9F91 /* CircleButtonView.swift */,
 				EEEB254C251A6ED90068191E /* StarButton.swift */,
 				EE16F5152618125500147715 /* Shake.swift */,
+				EE16F5232618164B00147715 /* ReadableWidth.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -463,10 +468,12 @@
 				EED5C406252A5A860078C132 /* AnyTransition+Extensions.swift in Sources */,
 				EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */,
 				EED5C40F252A5A8C0078C132 /* QuestionView.swift in Sources */,
+				EE16F52E2618168700147715 /* Shake.swift in Sources */,
 				EED5C3FC252A5A7D0078C132 /* Color+Extension.swift in Sources */,
 				EE6B5898252E87D2006C7EAF /* View+Extensions.swift in Sources */,
 				EED5C40D252A5A8C0078C132 /* StarButtonStyle.swift in Sources */,
 				EED5C411252A5A8C0078C132 /* CircleButtonView.swift in Sources */,
+				EE16F5292618168300147715 /* ReadableWidth.swift in Sources */,
 				EED5C40B252A5A8C0078C132 /* SuccessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +496,7 @@
 				EEEB252A251A6E7A0068191E /* ActionButtonStyle.swift in Sources */,
 				EEDFDAFE24B0E2DE001D9F91 /* Question.swift in Sources */,
 				EE16F5102616BC7500147715 /* DashboardView.swift in Sources */,
+				EE16F5242618164B00147715 /* ReadableWidth.swift in Sources */,
 				EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */,
 				EE16F5162618125500147715 /* Shake.swift in Sources */,
 				EEDFDAEF24B0198C001D9F91 /* CircleButtonStyle.swift in Sources */,
@@ -540,7 +548,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -565,7 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "we-compliment-clip/we_compliment_clip.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"we-compliment-clip/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -707,7 +715,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Compliments-Beta/Compliments-Beta.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Compliments-Beta/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
@@ -733,7 +741,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Compliments-Beta/Compliments-Beta.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Compliments-Beta/Preview Content\"";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;

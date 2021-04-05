@@ -22,6 +22,7 @@ struct AppContentView: View {
                     .environmentObject(authenticationService)
             }
         }
+        .readableWidth()
     }
     
 }

@@ -78,6 +78,7 @@ struct DashboardView: View {
                                     })
             )
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func logOut() {
