@@ -20,7 +20,7 @@ struct ClipContentView: View {
     
     @State private var message: String = ""
     @State private var showDownloadPrompt = false
-    @State private var selectedAnswer: Answer?
+    @State private var rating: Double = 0
     @State private var isEditingText: Bool = false
     @State private var textViewContentHeight: CGFloat = 38
     
@@ -29,13 +29,17 @@ struct ClipContentView: View {
     
     private let potentialAnswers = [Answer(title: "Bronze", color: .orange, value: 1), Answer(title: "Silver", color: .gray, value: 2), Answer(title: "Gold", color: .yellow, value: 3)]
     private let textViewId = "textViewId"
-    private let minTextViewHeight: CGFloat = 112
-    private var maxCharacterCount: Int = 250
+    private let maxRating: Int = 5
+    private let minTextViewHeight: CGFloat = 160
+    private var maxCharacterCount: Int = 500
     private var hasSurpassedMaxCount: Bool {
         message.count > maxCharacterCount
     }
     private var buttonIsEnabled: Bool {
-        selectedAnswer != nil && !message.isBlank && !hasSurpassedMaxCount
+        rating > 0 && !message.isBlank && !hasSurpassedMaxCount
+    }
+    private var ratingString: String {
+        String(format: "%.1f stars", rating)
     }
     
     
@@ -73,21 +77,37 @@ struct ClipContentView: View {
                     }
                     
                     Group {
-                        QuestionView(selectedAnswer: $selectedAnswer, question: Question(title: "Select an award level for this employee based on the service you received", answers: potentialAnswers))
-                            .padding(.top, 60)
-                        
                         HStack {
-                            Text("Tell us why?")
-                                .font(.title3)
+                            Spacer()
+                            
+                            Text("Select rating for this employee based on the service you received")
+                                .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
+                                .fixedSize(horizontal: false, vertical: true)
                             
                             Spacer()
                         }
                         .padding(.top, 40)
+                        .padding(.bottom, 20)
+                        .padding(.leading, 2)
+                        
+                        RatingView($rating, maxRating: maxRating)
+                        
+                        Text(ratingString)
+                            .font(.title3)
+                            .foregroundColor(.white)
+                        
+                        HStack {
+                            Text("Briefly tell us why")
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                        }
+                        .padding(.top, 20)
                         .padding(.bottom, 8)
                         .padding(.leading, 2)
                         
-                        TextView(text: $message, isEditing: $isEditingText, placeholder: "Leave feedback here...", textColor: .label) { contentSize in
+                        TextView(text: $message, isEditing: $isEditingText, placeholder: "Please leave your response here", textColor: .label) { contentSize in
                             DispatchQueue.main.async {
                                 withAnimation {
                                     textViewContentHeight = contentSize.height
@@ -146,8 +166,7 @@ struct ClipContentView: View {
     
     func sendCompliment() {
         UIWindow.currentWindow?.endEditing(true)
-        guard let value = selectedAnswer?.value else { return }
-        network.sendCompliment(with: 1, employerId: 2, comment: message, rating: value)
+        network.sendCompliment(with: 1, employerId: 2, comment: message, rating: rating)
     }
     
 }

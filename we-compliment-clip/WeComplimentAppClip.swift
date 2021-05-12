@@ -13,7 +13,7 @@ struct we_compliment_clipApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                LinearGradient(gradient: Gradient(colors: [.appLight, .appDark, .dark]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [.appLight, .appDark]), startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
     
                 ClipContentView()

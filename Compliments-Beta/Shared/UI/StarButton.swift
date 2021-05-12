@@ -27,20 +27,17 @@ struct StarButton: View {
                 if isSelected {
                     Image(systemName: "star.fill")
                         .foregroundColor(color)
-                        .font(.system(size: 48, weight: .bold, design: .default))
+                        .font(.system(size: 48, weight: .regular, design: .default))
                         .transition(.scaleInFadeOut())
                 } else {
                     Image(systemName: "star")
-                        .foregroundColor(color)
-                        .font(.system(size: 48, weight: .bold, design: .default))
+                        .foregroundColor(.white)
+                        .opacity(0.2)
+                        .font(.system(size: 48, weight: .regular, design: .default))
 
                 }
             })
             .buttonStyle(StarButtonStyle(color: color))
-            
-            Text("\(title)")
-                .font(.subheadline)
-                .foregroundColor(color)
         }
     }
 }

@@ -24,7 +24,7 @@ struct QuestionView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Select an award level for this employee based on the service you received")
+                Text("Select rating for this employee based on the service you received")
                     .font(.title3)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
@@ -37,7 +37,7 @@ struct QuestionView: View {
     
             HStack {
                 ForEach(question.answers) { answer in
-                    StarButton(isSelected: answer == selectedAnswer, title: answer.title, color: answer.color) {
+                    StarButton(isSelected: answer == selectedAnswer, title: answer.title, color: .yellow) {
                         withAnimation(Animation.spring(dampingFraction: 0.5).speed(1.5)) {
                             self.selectedAnswer = answer
                             UIImpactFeedbackGenerator().impactOccurred()

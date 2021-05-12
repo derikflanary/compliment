@@ -24,6 +24,7 @@
 		EE83DD78264C2AC0004F6535 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD74264C2A9F004F6535 /* TextView.swift */; };
 		EE83DD79264C2AC3004F6535 /* TextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD76264C2AAB004F6535 /* TextViewRepresentable.swift */; };
 		EE83DD7B264C34E8004F6535 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD7A264C34E8004F6535 /* RatingView.swift */; };
+		EE83DD7C264C4245004F6535 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD7A264C34E8004F6535 /* RatingView.swift */; };
 		EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */; };
 		EED5C3E2252A5A580078C132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E1252A5A580078C132 /* Assets.xcassets */; };
@@ -479,6 +480,7 @@
 				EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */,
 				EE83DD73264C28FE004F6535 /* String+Extensions.swift in Sources */,
 				EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */,
+				EE83DD7C264C4245004F6535 /* RatingView.swift in Sources */,
 				EE83DD79264C2AC3004F6535 /* TextViewRepresentable.swift in Sources */,
 				EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */,
 				EED5C410252A5A8C0078C132 /* ActionButtonStyle.swift in Sources */,

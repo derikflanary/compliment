@@ -25,7 +25,7 @@ class NetworkManager: ObservableObject {
     @Published var isSending: Bool = false
     
     
-    func sendCompliment(with employeeId: Int, employerId: Int, comment: String, rating: Int) {
+    func sendCompliment(with employeeId: Int, employerId: Int, comment: String, rating: Double) {
         guard let url = URL(string: "https://www.we-compliment.com/api/appPort") else { return }
         
         var params: [String: Any] = [:]
