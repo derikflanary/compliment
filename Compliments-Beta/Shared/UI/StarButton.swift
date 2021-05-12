@@ -20,7 +20,7 @@ struct StarButton: View {
     // MARK: - Bodey
     
     var body: some View {
-        VStack(alignment: .center, spacing: 20) {
+        VStack(alignment: .center, spacing: 12) {
             Button(action: {
                 tapped()
             }, label: {

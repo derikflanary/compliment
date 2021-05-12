@@ -24,32 +24,31 @@ struct QuestionView: View {
     var body: some View {
         VStack {
             HStack {
-                Spacer()
-                
-                Text(question.title)
+                Text("Select an award level for this employee based on the service you received")
                     .font(.title3)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.white)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 Spacer()
             }
             .padding(.bottom, 8)
+            .padding(.leading, 2)
     
             HStack {
                 ForEach(question.answers) { answer in
-                    VStack {
-                        StarButton(isSelected: answer == selectedAnswer, title: answer.title, color: answer.color) {
-                            withAnimation(Animation.spring(dampingFraction: 0.5).speed(1.5)) {
-                                self.selectedAnswer = answer
-                                UIImpactFeedbackGenerator().impactOccurred()
-                            }
+                    StarButton(isSelected: answer == selectedAnswer, title: answer.title, color: answer.color) {
+                        withAnimation(Animation.spring(dampingFraction: 0.5).speed(1.5)) {
+                            self.selectedAnswer = answer
+                            UIImpactFeedbackGenerator().impactOccurred()
                         }
                     }
                     if answer != question.answers.last {
                         Spacer()
                     }
                 }
-                
             }
+            .padding(.horizontal)
         }
     }
     

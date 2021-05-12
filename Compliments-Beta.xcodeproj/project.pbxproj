@@ -17,6 +17,13 @@
 		EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
 		EE6B5898252E87D2006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
+		EE83DD72264C28D3004F6535 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD71264C28D3004F6535 /* String+Extensions.swift */; };
+		EE83DD73264C28FE004F6535 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD71264C28D3004F6535 /* String+Extensions.swift */; };
+		EE83DD75264C2A9F004F6535 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD74264C2A9F004F6535 /* TextView.swift */; };
+		EE83DD77264C2AAB004F6535 /* TextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD76264C2AAB004F6535 /* TextViewRepresentable.swift */; };
+		EE83DD78264C2AC0004F6535 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD74264C2A9F004F6535 /* TextView.swift */; };
+		EE83DD79264C2AC3004F6535 /* TextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD76264C2AAB004F6535 /* TextViewRepresentable.swift */; };
+		EE83DD7B264C34E8004F6535 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD7A264C34E8004F6535 /* RatingView.swift */; };
 		EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */; };
 		EED5C3E2252A5A580078C132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E1252A5A580078C132 /* Assets.xcassets */; };
@@ -100,6 +107,10 @@
 		EE16F5232618164B00147715 /* ReadableWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableWidth.swift; sourceTree = "<group>"; };
 		EE21004B256041E6004DE562 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE6B5892252E87B5006C7EAF /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		EE83DD71264C28D3004F6535 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		EE83DD74264C2A9F004F6535 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		EE83DD76264C2AAB004F6535 /* TextViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewRepresentable.swift; sourceTree = "<group>"; };
+		EE83DD7A264C34E8004F6535 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		EED5C3DB252A5A580078C132 /* we-compliment-clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we-compliment-clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeComplimentAppClip.swift; sourceTree = "<group>"; };
 		EED5C3E1252A5A580078C132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -260,6 +271,7 @@
 				EEDFDAF724B02150001D9F91 /* UIWindow+Extension.swift */,
 				EE6B5892252E87B5006C7EAF /* View+Extensions.swift */,
 				EEEB2537251A6EAE0068191E /* AnyTransition+Extensions.swift */,
+				EE83DD71264C28D3004F6535 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +285,7 @@
 				EE16F5092616B77C00147715 /* LoginView.swift */,
 				EEDFDAFA24B0E270001D9F91 /* SuccessView.swift */,
 				EEDFDAEA24B01950001D9F91 /* QuestionView.swift */,
+				EE83DD7A264C34E8004F6535 /* RatingView.swift */,
 				EEDFDAEE24B0198C001D9F91 /* CircleButtonStyle.swift */,
 				EEEB2529251A6E7A0068191E /* ActionButtonStyle.swift */,
 				EEEB2521251A6E380068191E /* StarButtonStyle.swift */,
@@ -280,6 +293,8 @@
 				EEEB254C251A6ED90068191E /* StarButton.swift */,
 				EE16F5152618125500147715 /* Shake.swift */,
 				EE16F5232618164B00147715 /* ReadableWidth.swift */,
+				EE83DD74264C2A9F004F6535 /* TextView.swift */,
+				EE83DD76264C2AAB004F6535 /* TextViewRepresentable.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -462,7 +477,9 @@
 				EED5C40E252A5A8C0078C132 /* CircleButtonStyle.swift in Sources */,
 				EED5C412252A5A8C0078C132 /* ClipContentView.swift in Sources */,
 				EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */,
+				EE83DD73264C28FE004F6535 /* String+Extensions.swift in Sources */,
 				EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */,
+				EE83DD79264C2AC3004F6535 /* TextViewRepresentable.swift in Sources */,
 				EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */,
 				EED5C410252A5A8C0078C132 /* ActionButtonStyle.swift in Sources */,
 				EED5C406252A5A860078C132 /* AnyTransition+Extensions.swift in Sources */,
@@ -474,6 +491,7 @@
 				EED5C40D252A5A8C0078C132 /* StarButtonStyle.swift in Sources */,
 				EED5C411252A5A8C0078C132 /* CircleButtonView.swift in Sources */,
 				EE16F5292618168300147715 /* ReadableWidth.swift in Sources */,
+				EE83DD78264C2AC0004F6535 /* TextView.swift in Sources */,
 				EED5C40B252A5A8C0078C132 /* SuccessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +501,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEEB254D251A6ED90068191E /* StarButton.swift in Sources */,
+				EE83DD75264C2A9F004F6535 /* TextView.swift in Sources */,
+				EE83DD77264C2AAB004F6535 /* TextViewRepresentable.swift in Sources */,
+				EE83DD7B264C34E8004F6535 /* RatingView.swift in Sources */,
+				EE83DD72264C28D3004F6535 /* String+Extensions.swift in Sources */,
 				EEDFDAEB24B01950001D9F91 /* QuestionView.swift in Sources */,
 				EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEEB2522251A6E380068191E /* StarButtonStyle.swift in Sources */,

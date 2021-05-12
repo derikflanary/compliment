@@ -20,6 +20,7 @@ struct SuccessView: View {
                 .font(.title)
                 .bold()
             Text("Your response has been submitted")
+                .foregroundColor(.white)
             
             Image("logo")
                 .resizable()
