@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     
@@ -59,12 +60,28 @@ struct LoginView: View {
                     .font(.headline)
                     .bold()
             })
-            .buttonStyle(ActionButtonStyle())
-            .padding(.vertical, 32)
+            .buttonStyle(ActionButtonStyle(backgroundColor: .green, foregroundColor: .white))
+            .padding(.top, 32)
             .disabled(!canLogIn)
             .opacity(canLogIn ? 1 : 0.2)
             .modifier(Shake(animatableData: failureCount))
             .animation(.spring())
+            
+            SignInWithAppleButton(.signIn) { request in
+                request.requestedScopes = [.email]
+            } onCompletion: { result in
+                switch result {
+                case let .success(authorization):
+                    guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
+                    authenticationService.userId = credential.user
+                case .failure(let error):
+                    print(error)
+                    failureCount += 1
+                }
+            }
+            .frame(height: 48)
+            .padding()
+
         }
         .padding(.horizontal, 40)
         .padding(.vertical, 20)

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SuccessView: View {
     
+    @EnvironmentObject var authenticationService: AuthenticationService
+    
     @Binding var isComplete: Bool
     
     var body: some View {
@@ -29,6 +31,20 @@ struct SuccessView: View {
                 .foregroundColor(.appTintColor)
             
             Spacer()
+            
+            if authenticationService.isLoggedIn {
+                Button(action: {
+                    withAnimation {
+                        authenticationService.isLoggedIn = false
+                        isComplete = false
+                    }
+                }, label: {
+                    Text("Enter another code")
+                })
+                .foregroundColor(.white)
+                .buttonStyle(ActionButtonStyle(backgroundColor: .appGreen, foregroundColor: .white))
+                .padding()
+            }
         }
         .opacity(isComplete ? 1 : 0)
         .scaleEffect(isComplete ? 1 : 0)

@@ -61,6 +61,11 @@ struct RatingView: View {
         }
     }
     
+}
+
+
+private extension RatingView {
+    
     func image(starValue: Int) -> Image {
         let actualStarValue = Double(starValue + 1)
         if rating == actualStarValue || rating > actualStarValue && rating - actualStarValue > 0 {
@@ -71,17 +76,17 @@ struct RatingView: View {
             return Image(systemName: "star")
         }
     }
-
-    private func rating(at position: CGPoint) -> Double {
+    
+    func rating(at position: CGPoint) -> Double {
         let singleStarWidth = starSize.width
         let totalPaddingWidth = controlSize.width - CGFloat(maxRating)*singleStarWidth
         let singlePaddingWidth = totalPaddingWidth / (CGFloat(maxRating) - 1)
         let starWithSpaceWidth = Double(singleStarWidth + singlePaddingWidth)
         let x = Double(position.x)
-
+        
         let starIdx = Int(x / starWithSpaceWidth)
         let starPercent = x.truncatingRemainder(dividingBy: starWithSpaceWidth) / Double(singleStarWidth) * 100
-
+        
         let rating: Double
         if starPercent < 25 {
             rating = Double(starIdx)
@@ -90,7 +95,7 @@ struct RatingView: View {
         } else {
             rating = Double(starIdx) + 1
         }
-
+        
         return min(Double(maxRating), max(0, rating))
     }
     

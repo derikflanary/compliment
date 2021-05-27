@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct we_compliment_clipApp: App {
     
+    @StateObject var authenticationService = AuthenticationService()
+    
     var body: some Scene {
         WindowGroup {
             ZStack {
@@ -20,6 +22,7 @@ struct we_compliment_clipApp: App {
                     .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                         respondTo(activity)
                     }
+                    .environmentObject(authenticationService)
             }
         }
     }

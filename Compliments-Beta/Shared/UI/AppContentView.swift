@@ -15,10 +15,10 @@ struct AppContentView: View {
     var body: some View {
         ZStack {
             if authenticationService.isLoggedIn {
-                DashboardView()
+                ClipContentView()
                     .environmentObject(authenticationService)
             } else {
-                LoginView()
+                EnterCodeView()
                     .environmentObject(authenticationService)
             }
         }
@@ -35,6 +35,7 @@ struct AppContentView_Previews: PreviewProvider {
 
 class AuthenticationService: ObservableObject {
     
+    @Published var userId: String? = nil
     @Published var isLoggedIn: Bool = false
     
 }

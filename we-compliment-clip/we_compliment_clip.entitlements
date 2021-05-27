@@ -8,7 +8,7 @@
 	</array>
 	<key>com.apple.developer.parent-application-identifiers</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.derikflanary.we-compliment</string>
+		<string>$(AppIdentifierPrefix)com.derikflanary.compliment</string>
 	</array>
 </dict>
 </plist>

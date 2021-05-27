@@ -80,7 +80,7 @@ struct ClipContentView: View {
                         HStack {
                             Spacer()
                             
-                            Text("Select rating for this employee based on the service you received")
+                            Text("Select a rating for this employee based on the service you received")
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                                 .fixedSize(horizontal: false, vertical: true)

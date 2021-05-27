@@ -12,7 +12,12 @@ struct MainApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AppContentView()
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [.appLight, .appDark]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+                
+                AppContentView()
+            }
         }
     }
     
