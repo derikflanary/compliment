@@ -13,7 +13,7 @@ struct ClipContentView: View {
     
     // MARK: - State Objects
     
-    @StateObject var network = NetworkManager()
+    @ObservedObject var network: NetworkManager
     
     
     // MARK: - State
@@ -41,6 +41,13 @@ struct ClipContentView: View {
     private var ratingString: String {
         String(format: "%.1f stars", rating)
     }
+
+    
+    // MARK: - Init
+    
+    init(networkManager: NetworkManager) {
+        self.network = networkManager
+    }
     
     
     // MARK: - Body
@@ -64,6 +71,12 @@ struct ClipContentView: View {
                             network.isComplete = false
                         })
                     
+                    if network.failedFromInvalidLocation {
+                        Text("We were not able to verify that you are located near the designated location where you received your service.  You can only leave feedback near the the business's location")
+                            .padding()
+                            .multilineTextAlignment(.center)
+                    }
+                    
                     if network.isComplete {
                         Spacer()
                         
@@ -76,83 +89,85 @@ struct ClipContentView: View {
                             }
                     }
                     
-                    Group {
-                        HStack {
-                            Spacer()
+                    if network.isValidLocation {
+                        Group {
+                            HStack {
+                                Spacer()
+                                
+                                Text("Select a rating for this employee based on the service you received")
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                
+                                Spacer()
+                            }
+                            .padding(.top, 40)
+                            .padding(.bottom, 20)
+                            .padding(.leading, 2)
                             
-                            Text("Select a rating for this employee based on the service you received")
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
-                                .fixedSize(horizontal: false, vertical: true)
+                            RatingView($rating, maxRating: maxRating)
                             
-                            Spacer()
-                        }
-                        .padding(.top, 40)
-                        .padding(.bottom, 20)
-                        .padding(.leading, 2)
-                        
-                        RatingView($rating, maxRating: maxRating)
-                        
-                        Text(ratingString)
-                            .font(.title3)
-                            .foregroundColor(.white)
-                        
-                        HStack {
-                            Text("Briefly tell us why")
+                            Text(ratingString)
+                                .font(.title3)
                                 .foregroundColor(.white)
                             
-                            Spacer()
-                        }
-                        .padding(.top, 20)
-                        .padding(.bottom, 8)
-                        .padding(.leading, 2)
-                        
-                        TextView(text: $message, isEditing: $isEditingText, placeholder: "Please leave your response here", textColor: .label) { contentSize in
-                            DispatchQueue.main.async {
-                                withAnimation {
-                                    textViewContentHeight = contentSize.height
+                            HStack {
+                                Text("Briefly tell us why")
+                                    .foregroundColor(.white)
+                                
+                                Spacer()
+                            }
+                            .padding(.top, 20)
+                            .padding(.bottom, 8)
+                            .padding(.leading, 2)
+                            
+                            TextView(text: $message, isEditing: $isEditingText, placeholder: "Please leave your response here", textColor: .label) { contentSize in
+                                DispatchQueue.main.async {
+                                    withAnimation {
+                                        textViewContentHeight = contentSize.height
+                                    }
                                 }
                             }
-                        }
-                        .frame(height: max(minTextViewHeight, textViewContentHeight))
-                        .onTapGesture {
-                            delayOnMainThread(0.5) {
-                                withAnimation {
-                                    scrollProxy.scrollTo(textViewId, anchor: .bottom)
+                            .frame(height: max(minTextViewHeight, textViewContentHeight))
+                            .onTapGesture {
+                                delayOnMainThread(0.5) {
+                                    withAnimation {
+                                        scrollProxy.scrollTo(textViewId, anchor: .bottom)
+                                    }
                                 }
                             }
-                        }
-                        .id(textViewId)
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(4)
-                        
-                        HStack {
+                            .id(textViewId)
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(4)
+                            
+                            HStack {
+                                Spacer()
+                                
+                                Text("\(message.count) / \(maxCharacterCount)")
+                                    .font(.footnote)
+                                    .foregroundColor(hasSurpassedMaxCount ? .red : .white)
+                            }
+                            
                             Spacer()
                             
-                            Text("\(message.count) / \(maxCharacterCount)")
-                                .font(.footnote)
-                                .foregroundColor(hasSurpassedMaxCount ? .red : .white)
+                            Button(action: {
+                                sendCompliment()
+                            }, label: {
+                                if network.isSending {
+                                    ProgressView()
+                                } else {
+                                    Text("Submit")
+                                        .font(.headline)
+                                        .bold()
+                                }
+                            })
+                            .buttonStyle(ActionButtonStyle(backgroundColor: .appGreen, foregroundColor: .white))
+                            .padding(.vertical, 32)
+                            .disabled(!buttonIsEnabled || network.isSending)
+                            .opacity(buttonIsEnabled ? 1.0 : 0.2)
                         }
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            sendCompliment()
-                        }, label: {
-                            if network.isSending {
-                                ProgressView()
-                            } else {
-                                Text("Submit")
-                                    .font(.headline)
-                                    .bold()
-                            }
-                        })
-                        .buttonStyle(ActionButtonStyle(backgroundColor: .appGreen, foregroundColor: .white))
-                        .padding(.vertical, 32)
-                        .disabled(!buttonIsEnabled || network.isSending)
-                        .opacity(buttonIsEnabled ? 1.0 : 0.2)
+                        .opacity(network.isComplete ? 0.0 : 1)
                     }
-                    .opacity(network.isComplete ? 0.0 : 1)
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical)
@@ -177,7 +192,7 @@ struct ClipContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ClipContentView()
+            ClipContentView(networkManager: NetworkManager())
         }
     }
 }

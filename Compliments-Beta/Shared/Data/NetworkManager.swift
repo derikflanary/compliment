@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import CoreLocation
 
 class NetworkManager: ObservableObject {
     
@@ -19,14 +20,18 @@ class NetworkManager: ObservableObject {
         case delete = "DELETE"
     }
 
-    var subscriber: AnyCancellable?
+    private var subscribers = Set<AnyCancellable>()
+    private let session = URLSession(configuration: .default)
+    private let url = URL(string: "https://www.we-compliment.com/api/appPort")
     
     @Published var isComplete: Bool = false
     @Published var isSending: Bool = false
+    @Published var isValidLocation: Bool = false
+    @Published var failedFromInvalidLocation: Bool = false
     
     
     func sendCompliment(with employeeId: Int, employerId: Int, comment: String, rating: Double) {
-        guard let url = URL(string: "https://www.we-compliment.com/api/appPort") else { return }
+        guard let url = url else { return }
         
         var params: [String: Any] = [:]
         params["email"] = "bryan.d.burnham@gmail.com"
@@ -40,9 +45,9 @@ class NetworkManager: ObservableObject {
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue(NetworkKeys.applicationJSON, forHTTPHeaderField: NetworkKeys.contentTypeHeader)
         
-        let session = URLSession(configuration: .default)
+        
         isSending = true
-        subscriber = session.dataTaskPublisher(for: request)
+        session.dataTaskPublisher(for: request)
             .tryMap { output -> Any in
                 if let error = self.error(for: output.response, data: output.data) {
                     throw error
@@ -59,6 +64,69 @@ class NetworkManager: ObservableObject {
                     self.isSending = false
                 }
             })
+            .store(in: &subscribers)
+    }
+    
+    func getClientDetails(clientId: String, employeeId: String, activity: NSUserActivity) {
+        guard let url = url else { return }
+        
+        var params: [String: Any] = [:]
+        params["email"] = "bryan.d.burnham@gmail.com"
+        params["password"] = "Phishing4Compliments!1100"
+        params["employer_id"] = clientId
+        params["employee_id"] = employeeId
+        
+        var request = URLRequest(url: url.parameterEncoded(with: params) ?? url)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue(NetworkKeys.applicationJSON, forHTTPHeaderField: NetworkKeys.contentTypeHeader)
+        
+        session.dataTaskPublisher(for: request)
+            .tryMap { output in
+                if let error = self.error(for: output.response, data: output.data) {
+                    throw error
+                }
+                return output.data
+            }
+            .decode(type: ClientDetails.self, decoder: JSONDecoder())
+            .tryMap { clientDetails in
+                guard let latitude = CLLocationDegrees(clientDetails.latitude), let longitude = CLLocationDegrees(clientDetails.longitude) else { throw APIError.validationFailed("Could not find location based on coordinates from server")}
+                let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                return CLCircularRegion(center: coordinates, radius: 100, identifier: clientId)
+            }
+            .flatMap { region in
+                self.verifyLocation(region: region, activity: activity)
+            }
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+                switch completion {
+                case let .failure(error):
+                    withAnimation {
+                        self.failedFromInvalidLocation = true
+                    }
+                    print(error)
+                case .finished:
+                    break
+                }
+            }, receiveValue: { isValid in
+                withAnimation {
+                    self.isValidLocation = isValid
+                }
+            })
+            .store(in: &subscribers)
+    }
+    
+    func verifyLocation(region: CLRegion ,activity: NSUserActivity) -> AnyPublisher<Bool, Error> {
+        Future { promise in
+            guard let payload = activity.appClipActivationPayload else { promise(.success(false)); return }
+            payload.confirmAcquired(in: region) { inRegion, error in
+                if let error = error {
+                    promise(.failure(error))
+                }
+                promise(.success(inRegion))
+            }
+        }
+        .eraseToAnyPublisher()
     }
     
     private func error(for response: URLResponse?, data: Data) -> APIError? {
@@ -138,4 +206,14 @@ internal extension HTTPURLResponse {
         return output
     }
 
+}
+
+
+struct ClientDetails: Codable {
+    
+    let client: String
+    let employee: String
+    let latitude: String
+    let longitude: String
+    
 }

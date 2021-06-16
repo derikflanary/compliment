@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import AppClip
 
 @main
 struct we_compliment_clipApp: App {
     
     @StateObject var authenticationService = AuthenticationService()
+    @StateObject var network = NetworkManager()
     
     var body: some Scene {
         WindowGroup {
@@ -18,20 +20,24 @@ struct we_compliment_clipApp: App {
                 LinearGradient(gradient: Gradient(colors: [.appLight, .appDark]), startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
     
-                ClipContentView()
-                    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
-                        respondTo(activity)
-                    }
+                ClipContentView(networkManager: network)
                     .environmentObject(authenticationService)
+            }
+            .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+                respondTo(activity)
             }
         }
     }
     
     func respondTo(_ activity: NSUserActivity) {
-        guard let incomingURL = activity.webpageURL else { return }
-        guard let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true) else { return }
-        print(components)
-        // Update the user interface based on URL components passed to the app clip.
+        guard let incomingURL = activity.webpageURL,
+              let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true),
+              components.host == "www.we-compliment.com",
+              let queryItems = components.queryItems,
+              let clientId = queryItems.first?.value,
+              let employeeId = queryItems.last?.value else { return }
+        
+        network.getClientDetails(clientId: clientId, employeeId: employeeId, activity: activity)
     }
     
 }

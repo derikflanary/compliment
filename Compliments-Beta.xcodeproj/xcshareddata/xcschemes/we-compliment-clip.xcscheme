@@ -53,8 +53,8 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCAppClipURL"
-            value = "http://www.wecompliment.com"
-            isEnabled = "NO">
+            value = "https://www.we-compliment.com?client=1&amp;id=2"
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

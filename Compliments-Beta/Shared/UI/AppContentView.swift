@@ -15,7 +15,7 @@ struct AppContentView: View {
     var body: some View {
         ZStack {
             if authenticationService.isLoggedIn {
-                ClipContentView()
+                ClipContentView(networkManager: NetworkManager())
                     .environmentObject(authenticationService)
             } else {
                 EnterCodeView()
