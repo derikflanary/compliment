@@ -9,8 +9,11 @@ import Foundation
 import Combine
 import SwiftUI
 import CoreLocation
+import AppClip
 
 class NetworkManager: ObservableObject {
+    
+    // MARK: - Enums
     
     public enum HTTPMethod: String {
         case get = "GET"
@@ -20,23 +23,33 @@ class NetworkManager: ObservableObject {
         case delete = "DELETE"
     }
 
+    // MARK: - Private properties
+    
     private var subscribers = Set<AnyCancellable>()
     private let session = URLSession(configuration: .default)
     private let url = URL(string: "https://www.we-compliment.com/api/appPort")
+    private var clientId: String? = nil
+    private var employeeId: String? = nil
+    
+    // MARK: - Published
     
     @Published var isComplete: Bool = false
     @Published var isSending: Bool = false
     @Published var isValidLocation: Bool = false
     @Published var failedFromInvalidLocation: Bool = false
+    @Published var clientName: String? = nil
+    @Published var employeeName: String? = nil
     
     
-    func sendCompliment(with employeeId: Int, employerId: Int, comment: String, rating: Double) {
-        guard let url = url else { return }
+    // MARK: - Functions
+    
+    func sendCompliment(comment: String, rating: Double) {
+        guard let url = url, let clientId = clientId, let employeeId = employeeId else { return }
         
         var params: [String: Any] = [:]
         params["email"] = "bryan.d.burnham@gmail.com"
         params["password"] = "Phishing4Compliments!1100"
-        params["employer_id"] = employerId
+        params["employer_id"] = clientId
         params["employee_id"] = employeeId
         params["comment"] = comment
         params["rating"] = rating
@@ -57,12 +70,15 @@ class NetworkManager: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 self.isSending = false
+                print(completion)
             }, receiveValue: { response in
                 print(response)
                 withAnimation(.spring()) {
                     self.isComplete = true
                     self.isSending = false
                 }
+                self.clientId = nil
+                self.employeeId = nil
             })
             .store(in: &subscribers)
     }
@@ -80,6 +96,9 @@ class NetworkManager: ObservableObject {
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue(NetworkKeys.applicationJSON, forHTTPHeaderField: NetworkKeys.contentTypeHeader)
         
+        self.clientId = clientId
+        self.employeeId = employeeId
+        
         session.dataTaskPublisher(for: request)
             .tryMap { output in
                 if let error = self.error(for: output.response, data: output.data) {
@@ -88,6 +107,11 @@ class NetworkManager: ObservableObject {
                 return output.data
             }
             .decode(type: ClientDetails.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .handleEvents(receiveOutput: { clientDetails in
+                self.clientName = clientDetails.client
+                self.employeeName = clientDetails.employee
+            })
             .tryMap { clientDetails in
                 guard let latitude = CLLocationDegrees(clientDetails.latitude), let longitude = CLLocationDegrees(clientDetails.longitude) else { throw APIError.validationFailed("Could not find location based on coordinates from server")}
                 let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -96,7 +120,6 @@ class NetworkManager: ObservableObject {
             .flatMap { region in
                 self.verifyLocation(region: region, activity: activity)
             }
-            .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 print(completion)
                 switch completion {
@@ -109,18 +132,25 @@ class NetworkManager: ObservableObject {
                     break
                 }
             }, receiveValue: { isValid in
-                withAnimation {
-                    self.isValidLocation = isValid
+                DispatchQueue.main.async {
+                    withAnimation {
+                        self.isValidLocation = isValid
+                    }
                 }
             })
             .store(in: &subscribers)
     }
     
+}
+
+private extension NetworkManager {
+    
     func verifyLocation(region: CLRegion ,activity: NSUserActivity) -> AnyPublisher<Bool, Error> {
         Future { promise in
             guard let payload = activity.appClipActivationPayload else { promise(.success(false)); return }
             payload.confirmAcquired(in: region) { inRegion, error in
-                if let error = error {
+                if let error = error as? APActivationPayloadError {
+                    print(error.code)
                     promise(.failure(error))
                 }
                 promise(.success(inRegion))
@@ -129,7 +159,7 @@ class NetworkManager: ObservableObject {
         .eraseToAnyPublisher()
     }
     
-    private func error(for response: URLResponse?, data: Data) -> APIError? {
+    func error(for response: URLResponse?, data: Data) -> APIError? {
         guard let response = response as? HTTPURLResponse else {
             return APIError.networkError(nil)
         }
@@ -158,7 +188,6 @@ struct NetworkKeys {
     static let networkMonitorQueue = "NetworkMonitorQueue"
     static let requestIdHeader = "X-Request-Id"
 }
-
 
 extension URL {
     
