@@ -141,6 +141,13 @@ class NetworkManager: ObservableObject {
             .store(in: &subscribers)
     }
     
+    func loadTest() {
+        clientName = "Compliment"
+        clientId = "1"
+        employeeId = "2"
+        isValidLocation = true
+    }
+    
 }
 
 private extension NetworkManager {

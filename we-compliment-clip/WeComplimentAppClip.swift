@@ -9,7 +9,9 @@ import SwiftUI
 import AppClip
 
 @main
-struct we_compliment_clipApp: App {
+struct ClipApp: App {
+    
+    @Environment(\.scenePhase) var scenePhase
     
     @StateObject var authenticationService = AuthenticationService()
     @StateObject var network = NetworkManager()
@@ -32,8 +34,14 @@ struct we_compliment_clipApp: App {
     func respondTo(_ activity: NSUserActivity) {
         guard let incomingURL = activity.webpageURL,
               let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true),
-              components.host == "www.we-compliment.com",
-              let queryItems = components.queryItems,
+              components.host == "www.we-compliment.com" else { return }
+        
+        if components.path.contains("test") {
+            network.loadTest()
+            return
+        }
+        
+        guard let queryItems = components.queryItems,
               let clientId = queryItems.first?.value,
               let employeeId = queryItems.last?.value else { return }
         
