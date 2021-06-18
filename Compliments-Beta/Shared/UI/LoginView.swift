@@ -51,7 +51,6 @@ struct LoginView: View {
             
             SecureField("Password", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                
             
             Spacer()
             

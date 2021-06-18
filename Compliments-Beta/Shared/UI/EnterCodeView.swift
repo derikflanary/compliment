@@ -39,8 +39,6 @@ struct EnterCodeView: View {
                 .foregroundColor(.appTintColor)
                 .padding(40)
             
-            
-            
             TextField("Enter your code...", text: $code)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .disableAutocorrection(true)
