@@ -41,6 +41,17 @@ class NetworkManager: ObservableObject {
     @Published var employeeName: String? = nil
     
     
+    // MARK: - Init
+    
+    init(isValid: Bool = false) {
+        isValidLocation = isValid
+        if isValid {
+            clientId = "1"
+            employeeId = "2"
+        }
+    }
+
+    
     // MARK: - Functions
     
     func sendCompliment(comment: String, rating: Double) {
