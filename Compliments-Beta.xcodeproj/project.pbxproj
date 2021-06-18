@@ -30,6 +30,8 @@
 		EE83DD7C264C4245004F6535 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD7A264C34E8004F6535 /* RatingView.swift */; };
 		EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
 		EEB88B9F267AABC90029EC90 /* AppClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB88B9E267AABC90029EC90 /* AppClip.framework */; };
+		EEB88BA1267D17C70029EC90 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BA0267D17C70029EC90 /* FeedbackView.swift */; };
+		EEB88BA2267D17E60029EC90 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BA0267D17C70029EC90 /* FeedbackView.swift */; };
 		EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */; };
 		EED5C3E2252A5A580078C132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E1252A5A580078C132 /* Assets.xcassets */; };
 		EED5C3E5252A5A580078C132 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED5C3E4252A5A580078C132 /* Preview Assets.xcassets */; };
@@ -118,6 +120,7 @@
 		EE83DD76264C2AAB004F6535 /* TextViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewRepresentable.swift; sourceTree = "<group>"; };
 		EE83DD7A264C34E8004F6535 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		EEB88B9E267AABC90029EC90 /* AppClip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppClip.framework; path = System/Library/Frameworks/AppClip.framework; sourceTree = SDKROOT; };
+		EEB88BA0267D17C70029EC90 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		EED5C3DB252A5A580078C132 /* we-compliment-clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we-compliment-clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED5C3DD252A5A580078C132 /* WeComplimentAppClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeComplimentAppClip.swift; sourceTree = "<group>"; };
 		EED5C3E1252A5A580078C132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -297,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				EEDFDA8524AFC6B7001D9F91 /* ClipContentView.swift */,
+				EEB88BA0267D17C70029EC90 /* FeedbackView.swift */,
 				EE16F5032616B76500147715 /* AppContentView.swift */,
 				EE16F50F2616BC7500147715 /* DashboardView.swift */,
 				EE16F5092616B77C00147715 /* LoginView.swift */,
@@ -499,6 +503,7 @@
 				EED5C412252A5A8C0078C132 /* ClipContentView.swift in Sources */,
 				EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */,
 				EE83DD73264C28FE004F6535 /* String+Extensions.swift in Sources */,
+				EEB88BA2267D17E60029EC90 /* FeedbackView.swift in Sources */,
 				EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */,
 				EE83DD7C264C4245004F6535 /* RatingView.swift in Sources */,
 				EE83DD79264C2AC3004F6535 /* TextViewRepresentable.swift in Sources */,
@@ -535,6 +540,7 @@
 				EEDFDA8624AFC6B7001D9F91 /* ClipContentView.swift in Sources */,
 				EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */,
 				EE16F5042616B76500147715 /* AppContentView.swift in Sources */,
+				EEB88BA1267D17C70029EC90 /* FeedbackView.swift in Sources */,
 				EEDFDAE824AFDEFF001D9F91 /* Color+Extension.swift in Sources */,
 				EEEB2538251A6EAE0068191E /* AnyTransition+Extensions.swift in Sources */,
 				EEDFDAFB24B0E270001D9F91 /* SuccessView.swift in Sources */,
