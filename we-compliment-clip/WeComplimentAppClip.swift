@@ -32,9 +32,14 @@ struct ClipApp: App {
     }
     
     func respondTo(_ activity: NSUserActivity) {
+        network.reset()
+        let message = "The tag you scanned is invalid"
         guard let incomingURL = activity.webpageURL,
               let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true),
-              components.host == "www.we-compliment.com" else { return }
+              components.host == "we-compliment.com" else {
+            network.errorMessage = message
+            return
+        }
         
         if components.path.contains("test") {
             network.loadTest()
@@ -43,7 +48,10 @@ struct ClipApp: App {
         
         guard let queryItems = components.queryItems,
               let clientId = queryItems.first?.value,
-              let employeeId = queryItems.last?.value else { return }
+              let employeeId = queryItems.last?.value else {
+            network.errorMessage = message
+            return
+        }
         
         network.getClientDetails(clientId: clientId, employeeId: employeeId, activity: activity)
     }

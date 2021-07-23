@@ -35,10 +35,13 @@ class NetworkManager: ObservableObject {
     
     @Published var isComplete: Bool = false
     @Published var isSending: Bool = false
+    @Published var isValidating: Bool = false
     @Published var isValidLocation: Bool = false
     @Published var failedFromInvalidLocation: Bool = false
     @Published var clientName: String? = nil
     @Published var employeeName: String? = nil
+    @Published var errorMessage: String? = nil
+    @Published var response: String? = nil
     
     
     // MARK: - Init
@@ -109,6 +112,7 @@ class NetworkManager: ObservableObject {
         
         self.clientId = clientId
         self.employeeId = employeeId
+        self.isValidating = true
         
         session.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -122,21 +126,25 @@ class NetworkManager: ObservableObject {
             .handleEvents(receiveOutput: { clientDetails in
                 self.clientName = clientDetails.client
                 self.employeeName = clientDetails.employee
+                self.response = clientDetails.debugDescription
             })
             .tryMap { clientDetails in
                 guard let latitude = CLLocationDegrees(clientDetails.latitude), let longitude = CLLocationDegrees(clientDetails.longitude) else { throw APIError.validationFailed("Could not find location based on coordinates from server")}
                 let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                return CLCircularRegion(center: coordinates, radius: 100, identifier: clientId)
+                return CLCircularRegion(center: coordinates, radius: 200, identifier: clientId)
             }
             .flatMap { region in
                 self.verifyLocation(region: region, activity: activity)
             }
             .sink(receiveCompletion: { completion in
                 print(completion)
+                self.isValidating = false
                 switch completion {
                 case let .failure(error):
-                    withAnimation {
-                        self.failedFromInvalidLocation = true
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            self.failedFromInvalidLocation = true
+                        }
                     }
                     print(error)
                 case .finished:
@@ -157,6 +165,17 @@ class NetworkManager: ObservableObject {
         clientId = "1"
         employeeId = "2"
         isValidLocation = true
+    }
+    
+    func reset() {
+        isComplete = false
+        isSending = false
+        clientName = nil
+        clientId = nil
+        employeeId = nil
+        isValidLocation = false
+        failedFromInvalidLocation = false
+        errorMessage = nil
     }
     
 }
@@ -263,4 +282,7 @@ struct ClientDetails: Codable {
     let latitude: String
     let longitude: String
     
+    var debugDescription: String {
+        "client: \(client)\n employee: \(employee)\n gps: \(latitude), \(longitude)"
+    }
 }

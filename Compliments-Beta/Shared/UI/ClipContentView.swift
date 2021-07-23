@@ -16,6 +16,11 @@ struct ClipContentView: View {
     @ObservedObject var network: NetworkManager
    
     
+    // MARK: - State
+    
+    @State private var isDebug: Bool = false
+    
+    
     // MARK: - Init
     
     init(networkManager: NetworkManager) {
@@ -42,6 +47,7 @@ struct ClipContentView: View {
                         )
                         .onTapGesture(count: 3, perform: {
                             network.isComplete = false
+                            isDebug.toggle()
                         })
                     
                     if network.failedFromInvalidLocation {
@@ -49,6 +55,13 @@ struct ClipContentView: View {
                             .padding()
                             .multilineTextAlignment(.center)
                             .transition(.opacity)
+                            .foregroundColor(.white)
+                    } else if let errorMessage = network.errorMessage {
+                        Text(errorMessage)
+                            .padding()
+                            .multilineTextAlignment(.center)
+                            .transition(.opacity)
+                            .foregroundColor(.white)
                     }
                     
                     if network.isComplete {
@@ -65,6 +78,17 @@ struct ClipContentView: View {
                     if network.isValidLocation {
                         FeedbackView(networkManager: network, scrollProxy: scrollProxy)
                             .opacity(network.isComplete ? 0.0 : 1)
+                    }
+                    
+                    if network.isValidating {
+                        ProgressView()
+                            .padding()
+                    }
+                    
+                    if isDebug {
+                        Text(network.response ?? "")
+                            .padding()
+                            .foregroundColor(.white)
                     }
                 }
                 .padding(.horizontal, 20)
