@@ -136,6 +136,7 @@ class NetworkManager: ObservableObject {
             .flatMap { region in
                 self.verifyLocation(region: region, activity: activity)
             }
+            .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 print(completion)
                 self.isValidating = false
