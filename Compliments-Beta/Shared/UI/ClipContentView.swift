@@ -34,17 +34,20 @@ struct ClipContentView: View {
         ScrollViewReader { scrollProxy in
             ScrollView(showsIndicators: false) {
                 VStack {
-                    Text("compliment")
-                        .tracking(2)
-                        .font(.system(size: 36, weight: .light, design: .default))
-                        .padding(.horizontal, 8)
+                    Image("sportman")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+//                    Text("compliment")
+//                        .tracking(2)
+//                        .font(.system(size: 36, weight: .light, design: .default))
+                        .padding(.horizontal, 40)
                         .padding(.vertical, 2)
                         .foregroundColor(.white)
                         .cornerRadius(4)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 4)
-                                .stroke(Color.white, lineWidth: 1)
-                        )
+//                        .overlay(
+//                            RoundedRectangle(cornerRadius: 4)
+//                                .stroke(Color.white, lineWidth: 1)
+//                        )
                         .onTapGesture(count: 3, perform: {
                             network.isComplete = false
                             isDebug.toggle()
@@ -73,22 +76,32 @@ struct ClipContentView: View {
                             .onAppear {
                                 UINotificationFeedbackGenerator().notificationOccurred(.success)
                             }
-                    }
-                    
-                    if network.isValidLocation {
+                    } else if network.isValidLocation {
                         FeedbackView(networkManager: network, scrollProxy: scrollProxy)
                             .opacity(network.isComplete ? 0.0 : 1)
                     }
-                    
+
                     if network.isValidating {
                         ProgressView()
                             .padding()
                     }
                     
                     if isDebug {
-                        Text(network.response ?? "")
-                            .padding()
-                            .foregroundColor(.white)
+                        VStack {
+                            Text(network.response ?? "")
+                                .padding()
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.leading)
+                                .fixedSize(horizontal: false, vertical: true)
+                            
+                            if network.failedFromInvalidLocation {
+                                Text(network.errorMessage ?? "")
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .multilineTextAlignment(.leading)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                        }
                     }
                 }
                 .padding(.horizontal, 20)

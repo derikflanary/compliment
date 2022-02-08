@@ -74,6 +74,11 @@ class NetworkManager: ObservableObject {
         
         
         isSending = true
+        withAnimation(.spring().delay(0.5)) {
+            self.isComplete = true
+            self.isSending = false
+        }
+        return
         session.dataTaskPublisher(for: request)
             .tryMap { output -> Any in
                 if let error = self.error(for: output.response, data: output.data) {
@@ -128,36 +133,38 @@ class NetworkManager: ObservableObject {
                 self.employeeName = clientDetails.employee
                 self.response = clientDetails.debugDescription
             })
-            .tryMap { clientDetails in
-                guard let latitude = CLLocationDegrees(clientDetails.latitude), let longitude = CLLocationDegrees(clientDetails.longitude) else { throw APIError.validationFailed("Could not find location based on coordinates from server")}
-                let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                return CLCircularRegion(center: coordinates, radius: 200, identifier: clientId)
-            }
-            .flatMap { region in
-                self.verifyLocation(region: region, activity: activity)
-            }
+//            .tryMap { clientDetails in
+//                guard let latitude = CLLocationDegrees(clientDetails.latitude), let longitude = CLLocationDegrees(clientDetails.longitude) else { throw APIError.validationFailed("Could not find location based on coordinates from server")}
+//                let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//                return CLCircularRegion(center: coordinates, radius: 1000, identifier: clientId)
+//            }
+//            .flatMap { region in
+//                self.verifyLocation(region: region, activity: activity)
+//            }
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 print(completion)
                 self.isValidating = false
                 switch completion {
                 case let .failure(error):
-                    DispatchQueue.main.async {
-                        withAnimation {
-                            self.failedFromInvalidLocation = true
-                        }
-                    }
                     print(error)
-                case .finished:
-                    break
-                }
-            }, receiveValue: { isValid in
-                DispatchQueue.main.async {
-                    withAnimation {
-                        self.isValidLocation = isValid
+                    if let apiError = error as? APIError {
+                        switch apiError {
+                        case let .invalidLocation(locationError):
+                            withAnimation {
+                                self.failedFromInvalidLocation = true
+                            }
+                            self.errorMessage = "\(locationError.debugDescription)"
+                        default:
+                            self.errorMessage = error.localizedDescription
+                        }
+                    } else {
+                        self.errorMessage = error.localizedDescription
                     }
+                case .finished:
+                    self.isValidLocation = true
                 }
-            })
+            }, receiveValue: { isValid in })
             .store(in: &subscribers)
     }
     
@@ -177,21 +184,29 @@ class NetworkManager: ObservableObject {
         isValidLocation = false
         failedFromInvalidLocation = false
         errorMessage = nil
+        response = nil
     }
     
 }
 
 private extension NetworkManager {
     
-    func verifyLocation(region: CLRegion ,activity: NSUserActivity) -> AnyPublisher<Bool, Error> {
+    func verifyLocation(region: CLRegion, activity: NSUserActivity) -> AnyPublisher<Bool, Error> {
         Future { promise in
-            guard let payload = activity.appClipActivationPayload else { promise(.success(false)); return }
+            guard let payload = activity.appClipActivationPayload else {
+                promise(.failure(APIError.unsuccessfulRequest("No app clip activation payload found")))
+                return
+            }
             payload.confirmAcquired(in: region) { inRegion, error in
                 if let error = error as? APActivationPayloadError {
                     print(error.code)
-                    promise(.failure(error))
+                    promise(.failure(APIError.invalidLocation(error)))
                 }
-                promise(.success(inRegion))
+                if inRegion {
+                    promise(.success(true))
+                } else {
+                    promise(.failure(APIError.invalidLocation(nil)))
+                }
             }
         }
         .eraseToAnyPublisher()
@@ -254,6 +269,7 @@ public enum APIError: Error {
     case serverError(String?) // A 500~ error
     case unsuccessfulRequest(String?) // An error response with a status other than a 500 or 400 or 200
     case validationFailed(String?) // A 400~ error
+    case invalidLocation(Error?)
 }
 
 
@@ -286,4 +302,5 @@ struct ClientDetails: Codable {
     var debugDescription: String {
         "client: \(client)\n employee: \(employee)\n gps: \(latitude), \(longitude)"
     }
+    
 }

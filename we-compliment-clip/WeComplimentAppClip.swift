@@ -19,8 +19,8 @@ struct ClipApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                LinearGradient(gradient: Gradient(colors: [.appLight, .appDark]), startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
+//                LinearGradient(gradient: Gradient(colors: [.appLight, .appDark]), startPoint: .top, endPoint: .bottom)
+//                    .ignoresSafeArea()
     
                 ClipContentView(networkManager: network)
                     .environmentObject(authenticationService)

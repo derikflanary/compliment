@@ -26,6 +26,7 @@ struct FeedbackView: View {
     
     @State private var message: String = ""
     @State private var rating: Double = 0
+    @State private var secondRating: Double = 0
     @State private var isEditingText: Bool = false
     @State private var textViewContentHeight: CGFloat = 38
 
@@ -38,11 +39,12 @@ struct FeedbackView: View {
     private let maxRating: Int = 5
     private let minTextViewHeight: CGFloat = 160
     private var maxCharacterCount: Int = 500
+    private var textColor: Color = Color(.label)
     private var hasSurpassedMaxCount: Bool {
         message.count > maxCharacterCount
     }
     private var buttonIsEnabled: Bool {
-        rating > 0 && !message.isBlank && !hasSurpassedMaxCount
+        rating > 0 && secondRating > 0 && !hasSurpassedMaxCount
     }
     private var ratingString: String {
         String(format: "%.1f stars", rating)
@@ -52,29 +54,48 @@ struct FeedbackView: View {
     // MARK: - Body
     
     var body: some View {
-        HStack {
-            Spacer()
+        VStack {
             
-            Text("Select a rating for this employee based on the service you received")
-                .multilineTextAlignment(.center)
-                .foregroundColor(.white)
-                .fixedSize(horizontal: false, vertical: true)
+            HStack {
+                Spacer()
+                
+                Text("How was the cleanliness of our store and parking lot?")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(textColor)
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                Spacer()
+            }
+            .padding(.top, 40)
+            .padding(.bottom, 20)
+            .padding(.leading, 2)
             
-            Spacer()
+            RatingView($rating, maxRating: maxRating)
+            
+            HStack {
+                Spacer()
+                
+                Text("How fast and friendly was the checkout experience?")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(textColor)
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                Spacer()
+            }
+            .padding(.top, 40)
+            .padding(.bottom, 20)
+            .padding(.leading, 2)
+            
+            RatingView($secondRating, maxRating: maxRating)
         }
-        .padding(.top, 40)
-        .padding(.bottom, 20)
-        .padding(.leading, 2)
         
-        RatingView($rating, maxRating: maxRating)
-        
-        Text(ratingString)
-            .font(.title3)
-            .foregroundColor(.white)
+//        Text(ratingString)
+//            .font(.title3)
+//            .foregroundColor(.white)
         
         HStack {
-            Text("Briefly tell us why")
-                .foregroundColor(.white)
+            Text("Is there any additional feedback you would like to give us?")
+                .foregroundColor(textColor)
             
             Spacer()
         }
@@ -106,7 +127,7 @@ struct FeedbackView: View {
             
             Text("\(message.count) / \(maxCharacterCount)")
                 .font(.footnote)
-                .foregroundColor(hasSurpassedMaxCount ? .red : .white)
+                .foregroundColor(hasSurpassedMaxCount ? .red : textColor)
         }
         
         Spacer()

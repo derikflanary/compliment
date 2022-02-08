@@ -106,7 +106,7 @@ fileprivate extension Image {
     func star(size: CGSize) -> some View {
         return self
             .font(.system(size: 48, weight: .light, design: .default))
-            .foregroundColor(.white)
+            .foregroundColor(Color(.secondaryLabel))
             .background(
                 GeometryReader { proxy in
                     Color.clear.preference(key: StarSizeKey.self, value: proxy.size)

@@ -18,17 +18,18 @@ struct SuccessView: View {
             Spacer()
             
             Text("Success!")
-                .foregroundColor(.appTintColor)
+                .foregroundColor(Color(.label))
                 .font(.title)
                 .bold()
-            Text("Your response has been submitted")
-                .foregroundColor(.white)
             
-            Image("logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 80)
-                .foregroundColor(.appTintColor)
+            Text("Your response has been submitted")
+                .foregroundColor(Color(.label))
+            
+//            Image("logo")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 80)
+//                .foregroundColor(.appTintColor)
             
             Spacer()
             
