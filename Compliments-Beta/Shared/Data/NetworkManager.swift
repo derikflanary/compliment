@@ -118,6 +118,10 @@ class NetworkManager: ObservableObject {
         self.clientId = clientId
         self.employeeId = employeeId
         self.isValidating = true
+        self.isValidLocation = true
+        self.isValidating = false
+        
+        return
         
         session.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -133,14 +137,14 @@ class NetworkManager: ObservableObject {
                 self.employeeName = clientDetails.employee
                 self.response = clientDetails.debugDescription
             })
-//            .tryMap { clientDetails in
-//                guard let latitude = CLLocationDegrees(clientDetails.latitude), let longitude = CLLocationDegrees(clientDetails.longitude) else { throw APIError.validationFailed("Could not find location based on coordinates from server")}
-//                let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//                return CLCircularRegion(center: coordinates, radius: 1000, identifier: clientId)
-//            }
-//            .flatMap { region in
-//                self.verifyLocation(region: region, activity: activity)
-//            }
+            .tryMap { clientDetails in
+                guard let latitude = CLLocationDegrees(clientDetails.latitude), let longitude = CLLocationDegrees(clientDetails.longitude) else { throw APIError.validationFailed("Could not find location based on coordinates from server")}
+                let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                return CLCircularRegion(center: coordinates, radius: 1000, identifier: clientId)
+            }
+            .flatMap { region in
+                self.verifyLocation(region: region, activity: activity)
+            }
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 print(completion)

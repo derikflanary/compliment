@@ -53,19 +53,19 @@ struct ClipContentView: View {
                             isDebug.toggle()
                         })
                     
-                    if network.failedFromInvalidLocation {
-                        Text("We were not able to verify that you are located near the designated location where you received your service.  You can only leave feedback near the the business's location")
-                            .padding()
-                            .multilineTextAlignment(.center)
-                            .transition(.opacity)
-                            .foregroundColor(.white)
-                    } else if let errorMessage = network.errorMessage {
-                        Text(errorMessage)
-                            .padding()
-                            .multilineTextAlignment(.center)
-                            .transition(.opacity)
-                            .foregroundColor(.white)
-                    }
+//                    if network.failedFromInvalidLocation {
+//                        Text("We were not able to verify that you are located near the designated location where you received your service.  You can only leave feedback near the the business's location")
+//                            .padding()
+//                            .multilineTextAlignment(.center)
+//                            .transition(.opacity)
+//                            .foregroundColor(.white)
+//                    } else if let errorMessage = network.errorMessage {
+//                        Text(errorMessage)
+//                            .padding()
+//                            .multilineTextAlignment(.center)
+//                            .transition(.opacity)
+//                            .foregroundColor(.white)
+//                    }
                     
                     if network.isComplete {
                         Spacer()
