@@ -11,13 +11,13 @@ struct FeedbackView: View {
     
     // MARK: - Observed Objects
     
-    @ObservedObject var network: NetworkManager
+    @ObservedObject var complimentService: ComplimentService
    
     
     // MARK: - Init
     
-    init(networkManager: NetworkManager, scrollProxy: ScrollViewProxy) {
-        self.network = networkManager
+    init(complimentService: ComplimentService, scrollProxy: ScrollViewProxy) {
+        self.complimentService = complimentService
         self.scrollProxy = scrollProxy
     }
 
@@ -27,7 +27,7 @@ struct FeedbackView: View {
     @State private var message: String = ""
     @State private var rating: Double = 0
     @State private var isEditingText: Bool = false
-    @State private var textViewContentHeight: CGFloat = 38
+    @State private var textViewContentHeight: CGFloat = 48
 
     
     // MARK: - Properties
@@ -42,90 +42,80 @@ struct FeedbackView: View {
         message.count > maxCharacterCount
     }
     private var buttonIsEnabled: Bool {
-        rating > 0 && !message.isBlank && !hasSurpassedMaxCount
-    }
-    private var ratingString: String {
-        String(format: "%.1f stars", rating)
+        if complimentService.clientType == .one {
+            return rating > 0 && !message.isBlank && !hasSurpassedMaxCount
+        } else {
+            return !message.isBlank && !hasSurpassedMaxCount
+        }
     }
     
     
     // MARK: - Body
     
     var body: some View {
-        HStack {
+        VStack {
+            switch complimentService.clientType {
+            case .one:
+                RatingView($rating, maxRating: maxRating)
+            case .two:
+                EmptyView()
+            case .three:
+                EmptyView()
+            }
+            HStack {
+                Text(complimentService.clientType.explanationText)
+                    .foregroundColor(.white)
+                
+                Spacer()
+            }
+            .padding(.top, 20)
+            .padding(.bottom, 8)
+            .padding(.leading, 2)
+            
+            TextView(text: $message, isEditing: $isEditingText, placeholder: Localized.responsePlaceholder, textColor: .label) { contentSize in
+                DispatchQueue.main.async {
+                    withAnimation {
+                        textViewContentHeight = contentSize.height
+                    }
+                }
+            }
+            .frame(height: max(minTextViewHeight, textViewContentHeight))
+            .id(textViewId)
+            .background(Color(.secondarySystemBackground))
+            .cornerRadius(4)
+            
+            HStack {
+                Spacer()
+                
+                Text("\(message.count) / \(maxCharacterCount)")
+                    .font(.footnote)
+                    .foregroundColor(hasSurpassedMaxCount ? .red : .white)
+            }
+            
             Spacer()
             
-            Text("Select a rating for this employee based on the service you received")
-                .multilineTextAlignment(.center)
-                .foregroundColor(.white)
-                .fixedSize(horizontal: false, vertical: true)
+            Button(action: {
+                sendCompliment()
+            }, label: {
+                if complimentService.isSending {
+                    ProgressView()
+                } else {
+                    Text(Localized.submit)
+                        .font(.headline)
+                        .bold()
+                }
+            })
+            .buttonStyle(ActionButtonStyle(backgroundColor: .appGreen, foregroundColor: .white))
+            .padding(.vertical, .doubleLarge)
+            .disabled(!buttonIsEnabled || complimentService.isSending)
+            .opacity(buttonIsEnabled ? 1.0 : 0.2)
             
-            Spacer()
+            Text(Localized.disclaimer)
+                .font(.footnote)
+                .foregroundColor(.disclaimer)
+                .padding(.top, .negativeLarge)
         }
         .padding(.top, 40)
-        .padding(.bottom, 20)
-        .padding(.leading, 2)
-        
-        RatingView($rating, maxRating: maxRating)
-        
-        Text(ratingString)
-            .font(.title3)
-            .foregroundColor(.white)
-        
-        HStack {
-            Text("Briefly tell us why")
-                .foregroundColor(.white)
-            
-            Spacer()
-        }
-        .padding(.top, 20)
-        .padding(.bottom, 8)
-        .padding(.leading, 2)
-        
-        TextView(text: $message, isEditing: $isEditingText, placeholder: "Please leave your response here", textColor: .label) { contentSize in
-            DispatchQueue.main.async {
-                withAnimation {
-                    textViewContentHeight = contentSize.height
-                }
-            }
-        }
-        .frame(height: max(minTextViewHeight, textViewContentHeight))
-        .onTapGesture {
-            delayOnMainThread(0.5) {
-                withAnimation {
-                    scrollProxy.scrollTo(textViewId, anchor: .bottom)
-                }
-            }
-        }
-        .id(textViewId)
-        .background(Color(.secondarySystemBackground))
-        .cornerRadius(4)
-        
-        HStack {
-            Spacer()
-            
-            Text("\(message.count) / \(maxCharacterCount)")
-                .font(.footnote)
-                .foregroundColor(hasSurpassedMaxCount ? .red : .white)
-        }
-        
-        Spacer()
-        
-        Button(action: {
-            sendCompliment()
-        }, label: {
-            if network.isSending {
-                ProgressView()
-            } else {
-                Text("Submit")
-                    .font(.headline)
-                    .bold()
-            }
-        })
-        .buttonStyle(ActionButtonStyle(backgroundColor: .appGreen, foregroundColor: .white))
-        .padding(.vertical, 32)
-        .disabled(!buttonIsEnabled || network.isSending)
-        .opacity(buttonIsEnabled ? 1.0 : 0.2)
     }
     
 }
@@ -137,7 +127,9 @@ private extension FeedbackView {
     
     func sendCompliment() {
         UIWindow.currentWindow?.endEditing(true)
-        network.sendCompliment(comment: message, rating: rating)
+        Task {
+            await complimentService.sendCompliment(comment: message, rating: rating)
+        }
     }
     
 }

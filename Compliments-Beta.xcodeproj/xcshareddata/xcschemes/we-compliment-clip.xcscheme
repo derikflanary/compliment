@@ -53,12 +53,12 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCAppClipURL"
-            value = "https://we-compliment.com/test?client=1&amp;id=2"
+            value = "https://we-compliment.com/test?client=one&amp;id=2"
             isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "_XCAppClipURL"
-            value = "https://we-compliment.com/beta?client=6&amp;id=5"
+            value = "https://we-compliment.com/test?client=two&amp;id=2"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

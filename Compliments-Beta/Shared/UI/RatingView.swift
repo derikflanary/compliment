@@ -21,6 +21,9 @@ struct RatingView: View {
     var scale: CGFloat {
         1 + (CGFloat(rating) / 100)
     }
+    private var ratingString: String {
+        String(format: "%.1f stars", rating)
+    }
 
     init(_ rating: Binding<Double>, maxRating: Int = 5) {
         _rating = rating
@@ -28,36 +31,55 @@ struct RatingView: View {
     }
 
     var body: some View {
-        ZStack {
+        VStack {
             HStack {
-                ForEach(0..<Int(maxRating), id: \.self) { starValue in
-                    image(starValue: starValue)
-                        .star(size: starSize)
-                }
+                Spacer()
+                
+                Text(Localized.selectRating)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                Spacer()
             }
-            .scaleEffect(scale)
-            .animation(Animation.easeInOut.repeatCount(1, autoreverses: false))
-            .background(
-                GeometryReader { proxy in
-                    Color.clear.preference(key: ControlSizeKey.self, value: proxy.size)
+            .padding(.bottom, 20)
+            .padding(.leading, 2)
+            
+            ZStack {
+                HStack {
+                    ForEach(0..<Int(maxRating), id: \.self) { starValue in
+                        image(starValue: starValue)
+                            .star(size: starSize)
+                    }
                 }
-            )
-            .onPreferenceChange(StarSizeKey.self) { size in
-                starSize = size
-            }
-            .onPreferenceChange(ControlSizeKey.self) { size in
-                controlSize = size
+                .scaleEffect(scale)
+                .animation(Animation.easeInOut.repeatCount(1, autoreverses: false), value: scale)
+                .background(
+                    GeometryReader { proxy in
+                        Color.clear.preference(key: ControlSizeKey.self, value: proxy.size)
+                    }
+                )
+                .onPreferenceChange(StarSizeKey.self) { size in
+                    starSize = size
+                }
+                .onPreferenceChange(ControlSizeKey.self) { size in
+                    controlSize = size
+                }
+                
+                Color.clear
+                    .frame(width: controlSize.width, height: controlSize.height)
+                    .contentShape(Rectangle())
+                    .gesture(
+                        DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                            .onChanged { value in
+                                rating = rating(at: value.location)
+                            }
+                    )
             }
 
-            Color.clear
-                .frame(width: controlSize.width, height: controlSize.height)
-                .contentShape(Rectangle())
-                .gesture(
-                    DragGesture(minimumDistance: 0, coordinateSpace: .local)
-                        .onChanged { value in
-                            rating = rating(at: value.location)
-                        }
-                )
+            Text(ratingString)
+                .font(.title3)
+                .foregroundColor(.white)
         }
     }
     

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftynetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/derikflanary/SwiftyNetwork.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "340fec916e3821411318b887a07d594b78ccfc76"
+      }
+    }
+  ],
+  "version" : 2
+}

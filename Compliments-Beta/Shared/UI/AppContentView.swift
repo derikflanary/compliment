@@ -11,11 +11,10 @@ struct AppContentView: View {
     
     @StateObject var authenticationService = AuthenticationService()
     
-    
     var body: some View {
         ZStack {
             if authenticationService.isLoggedIn {
-                ClipContentView(networkManager: NetworkManager(isValid: true))
+                ClipContentView(complimentService: ComplimentService(isValid: true))
                     .environmentObject(authenticationService)
             } else {
                 EnterCodeView()

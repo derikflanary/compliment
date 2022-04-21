@@ -10,23 +10,27 @@ import SwiftUI
 extension Color {
     
     static var appTintColor: Color {
-        return Color(#function)
+        Color(#function)
     }
     
     static var appLight: Color {
-        return Color(#function)
+        Color(#function)
     }
 
     static var appDark: Color {
-        return Color(#function)
+        Color(#function)
     }
     
     static var dark: Color {
-        return Color(#function)
+        Color(#function)
     }
     
     static var appGreen: Color {
-        return Color(#function)
+        Color(#function)
+    }
+    
+    static var disclaimer: Color {
+        Color(#function)
     }
 
 }

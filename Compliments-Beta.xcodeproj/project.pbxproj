@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,15 @@
 		EE16F5242618164B00147715 /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5232618164B00147715 /* ReadableWidth.swift */; };
 		EE16F5292618168300147715 /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5232618164B00147715 /* ReadableWidth.swift */; };
 		EE16F52E2618168700147715 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16F5152618125500147715 /* Shake.swift */; };
-		EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
+		EE21004C256041E6004DE562 /* ComplimentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* ComplimentService.swift */; };
+		EE5AA3762811FB570061FB06 /* Padding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F442B2811FAB8001EB0DD /* Padding+Extensions.swift */; };
+		EE5AA3772811FB5A0061FB06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F44292811FA8C001EB0DD /* Constants.swift */; };
+		EE5AA3792812005B0061FB06 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5AA3782812005B0061FB06 /* Localized.swift */; };
+		EE5AA37A281200660061FB06 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5AA3782812005B0061FB06 /* Localized.swift */; };
+		EE5F44262811F138001EB0DD /* NetworkStackiOS in Frameworks */ = {isa = PBXBuildFile; productRef = EE5F44252811F138001EB0DD /* NetworkStackiOS */; };
+		EE5F44282811F217001EB0DD /* NetworkStackiOS in Frameworks */ = {isa = PBXBuildFile; productRef = EE5F44272811F217001EB0DD /* NetworkStackiOS */; };
+		EE5F442A2811FA8C001EB0DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F44292811FA8C001EB0DD /* Constants.swift */; };
+		EE5F442C2811FAB8001EB0DD /* Padding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F442B2811FAB8001EB0DD /* Padding+Extensions.swift */; };
 		EE6B5893252E87B5006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
 		EE6B5898252E87D2006C7EAF /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B5892252E87B5006C7EAF /* View+Extensions.swift */; };
 		EE6E9B6726600B8600D6CED7 /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6E9B6626600B8600D6CED7 /* EnterCodeView.swift */; };
@@ -28,7 +36,7 @@
 		EE83DD79264C2AC3004F6535 /* TextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD76264C2AAB004F6535 /* TextViewRepresentable.swift */; };
 		EE83DD7B264C34E8004F6535 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD7A264C34E8004F6535 /* RatingView.swift */; };
 		EE83DD7C264C4245004F6535 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83DD7A264C34E8004F6535 /* RatingView.swift */; };
-		EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* NetworkManager.swift */; };
+		EEA94F782567695B00CECBD5 /* ComplimentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21004B256041E6004DE562 /* ComplimentService.swift */; };
 		EEB88B9F267AABC90029EC90 /* AppClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB88B9E267AABC90029EC90 /* AppClip.framework */; };
 		EEB88BA1267D17C70029EC90 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BA0267D17C70029EC90 /* FeedbackView.swift */; };
 		EEB88BA2267D17E60029EC90 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BA0267D17C70029EC90 /* FeedbackView.swift */; };
@@ -112,7 +120,10 @@
 		EE16F50F2616BC7500147715 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		EE16F5152618125500147715 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		EE16F5232618164B00147715 /* ReadableWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableWidth.swift; sourceTree = "<group>"; };
-		EE21004B256041E6004DE562 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EE21004B256041E6004DE562 /* ComplimentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentService.swift; sourceTree = "<group>"; };
+		EE5AA3782812005B0061FB06 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		EE5F44292811FA8C001EB0DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EE5F442B2811FAB8001EB0DD /* Padding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Padding+Extensions.swift"; sourceTree = "<group>"; };
 		EE6B5892252E87B5006C7EAF /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		EE6E9B6626600B8600D6CED7 /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
 		EE83DD71264C28D3004F6535 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -158,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5F44282811F217001EB0DD /* NetworkStackiOS in Frameworks */,
 				EEB88B9F267AABC90029EC90 /* AppClip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5F44262811F138001EB0DD /* NetworkStackiOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				EEDFDAFD24B0E2DE001D9F91 /* Question.swift */,
-				EE21004B256041E6004DE562 /* NetworkManager.swift */,
+				EE21004B256041E6004DE562 /* ComplimentService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -292,6 +305,9 @@
 				EE6B5892252E87B5006C7EAF /* View+Extensions.swift */,
 				EEEB2537251A6EAE0068191E /* AnyTransition+Extensions.swift */,
 				EE83DD71264C28D3004F6535 /* String+Extensions.swift */,
+				EE5F44292811FA8C001EB0DD /* Constants.swift */,
+				EE5F442B2811FAB8001EB0DD /* Padding+Extensions.swift */,
+				EE5AA3782812005B0061FB06 /* Localized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +364,9 @@
 			dependencies = (
 			);
 			name = "we-compliment-clip";
+			packageProductDependencies = (
+				EE5F44272811F217001EB0DD /* NetworkStackiOS */,
+			);
 			productName = "we-compliment-clip";
 			productReference = EED5C3DB252A5A580078C132 /* we-compliment-clip.app */;
 			productType = "com.apple.product-type.application.on-demand-install-capable";
@@ -367,6 +386,9 @@
 				EED5C3E9252A5A580078C132 /* PBXTargetDependency */,
 			);
 			name = "Compliments-Beta";
+			packageProductDependencies = (
+				EE5F44252811F138001EB0DD /* NetworkStackiOS */,
+			);
 			productName = "Compliments-Beta";
 			productReference = EEDFDA8024AFC6B7001D9F91 /* Compliments-Beta.app */;
 			productType = "com.apple.product-type.application";
@@ -444,6 +466,9 @@
 				Base,
 			);
 			mainGroup = EEDFDA7724AFC6B7001D9F91;
+			packageReferences = (
+				EE5F44242811F138001EB0DD /* XCRemoteSwiftPackageReference "SwiftyNetwork" */,
+			);
 			productRefGroup = EEDFDA8124AFC6B7001D9F91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -500,14 +525,16 @@
 			files = (
 				EED5C3F7252A5A780078C132 /* Question.swift in Sources */,
 				EED5C40E252A5A8C0078C132 /* CircleButtonStyle.swift in Sources */,
+				EE5AA3762811FB570061FB06 /* Padding+Extensions.swift in Sources */,
 				EED5C412252A5A8C0078C132 /* ClipContentView.swift in Sources */,
 				EED5C40C252A5A8C0078C132 /* StarButton.swift in Sources */,
 				EE83DD73264C28FE004F6535 /* String+Extensions.swift in Sources */,
 				EEB88BA2267D17E60029EC90 /* FeedbackView.swift in Sources */,
+				EE5AA3772811FB5A0061FB06 /* Constants.swift in Sources */,
 				EED5C401252A5A800078C132 /* UIWindow+Extension.swift in Sources */,
 				EE83DD7C264C4245004F6535 /* RatingView.swift in Sources */,
 				EE83DD79264C2AC3004F6535 /* TextViewRepresentable.swift in Sources */,
-				EEA94F782567695B00CECBD5 /* NetworkManager.swift in Sources */,
+				EEA94F782567695B00CECBD5 /* ComplimentService.swift in Sources */,
 				EED5C410252A5A8C0078C132 /* ActionButtonStyle.swift in Sources */,
 				EED5C406252A5A860078C132 /* AnyTransition+Extensions.swift in Sources */,
 				EED5C3DE252A5A580078C132 /* WeComplimentAppClip.swift in Sources */,
@@ -518,6 +545,7 @@
 				EE6E9B68266012A200D6CED7 /* AppContentView.swift in Sources */,
 				EED5C40D252A5A8C0078C132 /* StarButtonStyle.swift in Sources */,
 				EED5C411252A5A8C0078C132 /* CircleButtonView.swift in Sources */,
+				EE5AA37A281200660061FB06 /* Localized.swift in Sources */,
 				EE6E9B69266012D300D6CED7 /* EnterCodeView.swift in Sources */,
 				EE16F5292618168300147715 /* ReadableWidth.swift in Sources */,
 				EE83DD78264C2AC0004F6535 /* TextView.swift in Sources */,
@@ -530,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEEB254D251A6ED90068191E /* StarButton.swift in Sources */,
+				EE5F442C2811FAB8001EB0DD /* Padding+Extensions.swift in Sources */,
 				EE83DD75264C2A9F004F6535 /* TextView.swift in Sources */,
 				EE83DD77264C2AAB004F6535 /* TextViewRepresentable.swift in Sources */,
 				EE83DD7B264C34E8004F6535 /* RatingView.swift in Sources */,
@@ -538,7 +567,8 @@
 				EEDFDAF824B02151001D9F91 /* UIWindow+Extension.swift in Sources */,
 				EEEB2522251A6E380068191E /* StarButtonStyle.swift in Sources */,
 				EEDFDA8624AFC6B7001D9F91 /* ClipContentView.swift in Sources */,
-				EE21004C256041E6004DE562 /* NetworkManager.swift in Sources */,
+				EE21004C256041E6004DE562 /* ComplimentService.swift in Sources */,
+				EE5AA3792812005B0061FB06 /* Localized.swift in Sources */,
 				EE16F5042616B76500147715 /* AppContentView.swift in Sources */,
 				EEB88BA1267D17C70029EC90 /* FeedbackView.swift in Sources */,
 				EEDFDAE824AFDEFF001D9F91 /* Color+Extension.swift in Sources */,
@@ -555,6 +585,7 @@
 				EEDFDAEF24B0198C001D9F91 /* CircleButtonStyle.swift in Sources */,
 				EEDFDAED24B01968001D9F91 /* CircleButtonView.swift in Sources */,
 				EEDFDA8424AFC6B7001D9F91 /* MainApp.swift in Sources */,
+				EE5F442A2811FA8C001EB0DD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +637,7 @@
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "we-compliment-clip/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +662,7 @@
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "we-compliment-clip/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -695,7 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -750,7 +781,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -773,7 +804,7 @@
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Compliments-Beta/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -799,7 +830,7 @@
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Compliments-Beta/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -945,6 +976,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE5F44242811F138001EB0DD /* XCRemoteSwiftPackageReference "SwiftyNetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/derikflanary/SwiftyNetwork.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE5F44252811F138001EB0DD /* NetworkStackiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE5F44242811F138001EB0DD /* XCRemoteSwiftPackageReference "SwiftyNetwork" */;
+			productName = NetworkStackiOS;
+		};
+		EE5F44272811F217001EB0DD /* NetworkStackiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE5F44242811F138001EB0DD /* XCRemoteSwiftPackageReference "SwiftyNetwork" */;
+			productName = NetworkStackiOS;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EEDFDA7824AFC6B7001D9F91 /* Project object */;
 }

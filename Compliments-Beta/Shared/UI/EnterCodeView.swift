@@ -63,7 +63,7 @@ struct EnterCodeView: View {
             .disabled(!canSubmitCode)
             .opacity(canSubmitCode ? 1 : 0.2)
             .modifier(Shake(animatableData: failureCount))
-            .animation(.spring())
+            .animation(.spring(), value: failureCount)
         }
         .padding()
     }

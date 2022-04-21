@@ -14,7 +14,7 @@ struct ClipApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     @StateObject var authenticationService = AuthenticationService()
-    @StateObject var network = NetworkManager()
+    @StateObject var complimentService = ComplimentService()
     
     var body: some Scene {
         WindowGroup {
@@ -22,7 +22,7 @@ struct ClipApp: App {
                 LinearGradient(gradient: Gradient(colors: [.appLight, .appDark]), startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
     
-                ClipContentView(networkManager: network)
+                ClipContentView(complimentService: complimentService)
                     .environmentObject(authenticationService)
             }
             .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
@@ -32,28 +32,31 @@ struct ClipApp: App {
     }
     
     func respondTo(_ activity: NSUserActivity) {
-        network.reset()
+        complimentService.reset()
+        
         let message = "The tag you scanned is invalid"
         guard let incomingURL = activity.webpageURL,
               let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true),
               components.host == "we-compliment.com" else {
-            network.errorMessage = message
+            complimentService.errorMessage = message
+            return
+        }
+
+        guard let queryItems = components.queryItems,
+              let clientId = queryItems.first?.value,
+              let employeeId = queryItems.last?.value else {
+            complimentService.errorMessage = message
             return
         }
         
         if components.path.contains("test") {
-            network.loadTest()
+            complimentService.loadTest(clientId: clientId, employeeId: employeeId)
             return
         }
         
-        guard let queryItems = components.queryItems,
-              let clientId = queryItems.first?.value,
-              let employeeId = queryItems.last?.value else {
-            network.errorMessage = message
-            return
+        Task {
+            await complimentService.getClientDetails(clientId: clientId, employeeId: employeeId, activity: activity)
         }
-        
-        network.getClientDetails(clientId: clientId, employeeId: employeeId, activity: activity)
     }
     
 }
