@@ -33,7 +33,7 @@ class ComplimentService: ObservableObject {
     // MARK: - Private properties
     
     private let session = URLSession(configuration: .default)
-    private let url = URL(string: "https://www.we-compliment.com/api/appPort")
+    private let url = URL(string: "https://www.wecompliment.com/api/appPort")
     private var clientId: String? = nil
     private var employeeId: String? = nil
     private var network: NetworkManager {

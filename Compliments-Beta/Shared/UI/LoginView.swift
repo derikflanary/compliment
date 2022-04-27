@@ -64,7 +64,7 @@ struct LoginView: View {
             .disabled(!canLogIn)
             .opacity(canLogIn ? 1 : 0.2)
             .modifier(Shake(animatableData: failureCount))
-            .animation(.spring())
+            .animation(.spring(), value: failureCount)
             
             SignInWithAppleButton(.signIn) { request in
                 request.requestedScopes = [.email]

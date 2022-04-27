@@ -37,7 +37,7 @@ struct ClipApp: App {
         let message = "The tag you scanned is invalid"
         guard let incomingURL = activity.webpageURL,
               let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true),
-              components.host == "we-compliment.com" else {
+              components.host == "wecompliment.com" else {
             complimentService.errorMessage = message
             return
         }
